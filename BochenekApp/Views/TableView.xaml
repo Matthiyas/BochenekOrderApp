@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BochenekApp.Views"
-             mc:Ignorable="d"
+             mc:Ignorable="d" Background="White"
              d:DesignHeight="450" d:DesignWidth="800"
               MinHeight="700" MinWidth="1000" Height="768" Width="1360">
     <Grid x:Name="Container">
@@ -121,11 +121,11 @@
                    Background="Gray" Padding="10"/>
 
             <!--values-->
-            <TextBlock Grid.Column="0" Grid.Row="1" Text="Testowy napis"
+            <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding Path=Number, Mode=OneWay}"
                    TextAlignment="Center" FontSize="16"
                     Padding="10"/>
 
-            <TextBlock Grid.Column="1" Grid.Row="1" Text="Testowy napis"
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Path=ClientName, Mode=OneWay}"
                    TextAlignment="Center" FontSize="16"
                    Padding="10"/>
 
