@@ -8,7 +8,11 @@ namespace BochenekApp.Models
 {
     public class DataModel
     {
-        public string title;
+        public string type;
         public string number;
+        public string clientName;
+        public string width;
+        public string height;
+        
     }
 }

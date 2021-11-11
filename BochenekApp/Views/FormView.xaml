@@ -9,23 +9,46 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition MinHeight="40" Height="auto"/>
+            <RowDefinition MinHeight="80" Height="auto"/>
+            <RowDefinition MinHeight="40" Height="auto"/>
+            <RowDefinition MinHeight="80" Height="auto"/>
+            <RowDefinition MinHeight="40" Height="auto"/>
+            <RowDefinition MinHeight="80" Height="auto"/>
+            <RowDefinition MinHeight="40" Height="auto"/>
+            <RowDefinition MinHeight="80" Height="auto"/>
+            <RowDefinition MinHeight="40" Height="auto"/>
+            <RowDefinition MinHeight="80" Height="auto"/>
+            <RowDefinition MinHeight="40" Height="auto"/>
+            <RowDefinition MinHeight="80" Height="auto"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <!--First row-->
-        <TextBox MinWidth="100" Grid.Row="1" Grid.Column="1" x:Name="ClientName"></TextBox>
-        <TextBox MinWidth="100" Grid.Row="2" Grid.Column="1" x:Name="Number"></TextBox>
+        <TextBlock Grid.Row="1" Grid.Column="1">Rodzaj wyrobu:</TextBlock>
+        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="2" Grid.Column="1" x:Name="Type"></TextBox>
+
+        <TextBlock Grid.Row="3" Grid.Column="1">Ilość:</TextBlock>
+        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="4" Grid.Column="1" x:Name="Number"></TextBox>
+
+        <TextBlock Grid.Row="5" Grid.Column="1">Klient:</TextBlock>
+        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="6" Grid.Column="1" x:Name="ClientName"></TextBox>
+        
+        <TextBlock Grid.Row="7" Grid.Column="1">Szerokość:</TextBlock>
+        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="8" Grid.Column="1" x:Name="Width"></TextBox>
+        
+        <TextBlock Grid.Row="9" Grid.Column="1">Wysokość:</TextBlock>
+        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="10" Grid.Column="1" x:Name="Height"></TextBox>
+
+        <TextBlock Grid.Row="11" Grid.Column="1">Kolor:</TextBlock>
+        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="12" Grid.Column="1" x:Name="Color"></TextBox>
 
 
     </Grid>

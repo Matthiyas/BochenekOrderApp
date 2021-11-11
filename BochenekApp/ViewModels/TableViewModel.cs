@@ -22,18 +22,36 @@ namespace BochenekApp.ViewModels
             return overview;
         }
 
-        private string _clientName = ReadXML().title;
+        private string _type = ReadXML().type;
         private string _number = ReadXML().number;
-
+        private string _clientName = ReadXML().clientName;
+        private string _width = ReadXML().width;
+        private string _height = ReadXML().height;
+   
+        public string Type
+        {
+            get { return _type; }
+            set { _type = value; }
+        }
+        public string Number
+        {
+            get { return _number+" szt."; }
+            set { _number = value; }
+        }
         public string ClientName
         {
             get { return _clientName; }
             set { _clientName = value; }
         }
-        public string Number
+        public string Width
         {
-            get { return _number; }
-            set { _number = value; }
+            get { return _width; }
+            set { _width = value; }
+        }
+        public string Height
+        {
+            get { return _height; }
+            set { _height = value; }
         }
     }
 

@@ -121,19 +121,24 @@
                    Background="Gray" Padding="10"/>
 
             <!--values-->
-            <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding Path=Number, Mode=OneWay}"
+            <StackPanel Grid.Column="0" Grid.Row="1">
+                <TextBlock Text="{Binding Path=Type, Mode=OneWay}"
                    TextAlignment="Center" FontSize="16"
                     Padding="10"/>
-
+                <TextBlock Text="{Binding Path=Number, Mode=OneWay}"
+                   TextAlignment="Center" FontSize="16"
+                    Padding="10"/>
+            </StackPanel>
+            
             <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Path=ClientName, Mode=OneWay}"
                    TextAlignment="Center" FontSize="16"
                    Padding="10"/>
 
-            <TextBlock Grid.Column="2" Grid.Row="1" Text="Testowy napis"
+            <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding Path=Width, Mode=OneWay}"
                    TextAlignment="Center" FontSize="16"
                    Padding="10"/>
 
-            <TextBlock Grid.Column="3" Grid.Row="1" Text="Testowy napis"
+            <TextBlock Grid.Column="3" Grid.Row="1" Text="{Binding Path=Height, Mode=OneWay}"
                    TextAlignment="Center" FontSize="16"
                    Padding="10"/>
 

@@ -29,24 +29,45 @@ namespace BochenekApp.ViewModels
             writer.Serialize(wfile, temp);
             wfile.Close();
         }
-        
-        public void SaveClientName(string title)
+        public void SaveType(string type)
         {
-            temp.title = title;
+            temp.type = type;
         }
         public void SaveNumber(string number)
         {
             temp.number = number;
         }
+        public void SaveClientName(string clientName)
+        {
+            temp.clientName = clientName;
+        }
+        public void SaveWidth(string width)
+        {
+            temp.width = width;
+        }
+        public void SaveHeight(string height)
+        {
+            temp.height = height;
+        }
 
         public string ClientName
         {
-            get { return ReadXML().title; }
+            get { return ReadXML().clientName; }
             set 
             {
                 SaveClientName(value);
                 SaveXML();
                 NotifyOfPropertyChange(() => ClientName);
+            }
+        }
+        public string Type
+        {
+            get { return ReadXML().type; }
+            set
+            {
+                SaveType(value);
+                SaveXML();
+                NotifyOfPropertyChange(() => Type);
             }
         }
         public string Number
@@ -57,6 +78,26 @@ namespace BochenekApp.ViewModels
                 SaveNumber(value);
                 SaveXML();
                 NotifyOfPropertyChange(() => Number);
+            }
+        }
+        public string Width
+        {
+            get { return ReadXML().width; }
+            set
+            {
+                SaveWidth(value);
+                SaveXML();
+                NotifyOfPropertyChange(() => Width);
+            }
+        }
+        public string Height
+        {
+            get { return ReadXML().height; }
+            set
+            {
+                SaveHeight(value);
+                SaveXML();
+                NotifyOfPropertyChange(() => Height);
             }
         }
     }
