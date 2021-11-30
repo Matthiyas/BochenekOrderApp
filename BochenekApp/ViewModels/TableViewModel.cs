@@ -12,21 +12,14 @@ namespace BochenekApp.ViewModels
 {
     public class TableViewModel
     {
-        public static DataModel ReadXML()
-        {
-            System.Xml.Serialization.XmlSerializer reader = new System.Xml.Serialization.XmlSerializer(typeof(DataModel));
-            System.IO.StreamReader file = new System.IO.StreamReader(@"../../Models/TemporaryDataModel.xml");
-            DataModel overview = (DataModel)reader.Deserialize(file);
-            file.Close();
 
-            return overview;
-        }
-
-        private string _type = ReadXML().type;
-        private string _number = ReadXML().number;
-        private string _clientName = ReadXML().clientName;
-        private string _width = ReadXML().width;
-        private string _height = ReadXML().height;
+        private string _type = DataModel.ReadXML().type;
+        private string _number = DataModel.ReadXML().number;
+        private string _clientName = DataModel.ReadXML().clientName;
+        private string _width = DataModel.ReadXML().width;
+        private string _height = DataModel.ReadXML().height;
+        private string _color = DataModel.ReadXML().color;
+        private string _notes = DataModel.ReadXML().notes;
    
         public string Type
         {
@@ -52,6 +45,16 @@ namespace BochenekApp.ViewModels
         {
             get { return _height; }
             set { _height = value; }
+        }
+        public string Color
+        {
+            get { return _color; }
+            set { _color = value; }
+        }
+        public string Notes
+        {
+            get { return _notes; }
+            set { _notes = value; }
         }
     }
 

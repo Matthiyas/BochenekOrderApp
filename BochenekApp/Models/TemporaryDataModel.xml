@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DataModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <type>Brama uchylna</type>
-  <number>2</number>
-  <clientName>Paweł Florek</clientName>
-  <width>2.5</width>
-  <height>2.1</height>
+  <state>false</state>
+  <type />
+  <number />
+  <clientName />
+  <width />
+  <height />
+  <color />
+  <notes />
 </DataModel>

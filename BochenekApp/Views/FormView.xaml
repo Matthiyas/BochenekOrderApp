@@ -49,6 +49,9 @@
 
         <TextBlock Grid.Row="11" Grid.Column="1">Kolor:</TextBlock>
         <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="12" Grid.Column="1" x:Name="Color"></TextBox>
+        
+        <TextBlock Grid.Row="1" Grid.Column="2">Uwagi:</TextBlock>
+        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="2" Grid.Column="2" x:Name="Notes"></TextBox>
 
 
     </Grid>

@@ -146,11 +146,11 @@
                    TextAlignment="Center" FontSize="16"
                    Padding="10"/>
 
-            <TextBlock Grid.Column="5" Grid.Row="1" Text="Testowy napis"
+            <TextBlock Grid.Column="5" Grid.Row="1" Text="{Binding Path=Color, Mode=OneWay}"
                    TextAlignment="Center" FontSize="16"
                    Padding="10"/>
 
-            <TextBlock Grid.Column="6" Grid.Row="1" Text="Testowy napis"
+            <TextBlock Grid.Column="6" Grid.Row="1" Text="{Binding Path=Notes, Mode=OneWay}"
                    TextAlignment="Center" FontSize="16"
                    Padding="10"/>
             <Border BorderBrush="Black" BorderThickness="0 0 1 1" 
@@ -211,7 +211,7 @@
                 <TextBlock Grid.Row="3" Grid.Column="0" Background="Gray"
                            FontWeight="Bold" FontSize="15" Padding="20"
                            TextAlignment="Center">
-                    Spawanie i skęcanie <LineBreak/> konstrukcji
+                    Spawanie i skręcanie <LineBreak/> konstrukcji
                 </TextBlock>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Background="Gray"

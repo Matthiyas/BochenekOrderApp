@@ -12,92 +12,108 @@ namespace BochenekApp.ViewModels
 {
     class FormViewModel : Conductor<object>
     {
-        private static DataModel temp = ReadXML();
-        public static DataModel ReadXML()
-        {
-            System.Xml.Serialization.XmlSerializer reader = new System.Xml.Serialization.XmlSerializer(typeof(DataModel));
-            System.IO.StreamReader file = new System.IO.StreamReader(@"../../Models/TemporaryDataModel.xml");
-            DataModel overview = (DataModel)reader.Deserialize(file);
-            file.Close();
+        
+        private static DataModel temp = DataModel.ReadXML();
 
-            return overview;
+        public void checkState()
+        {
+            if (!DataModel.ReadXML().state)
+            { 
+                temp = DataModel.ReadXML();
+                temp.state = true;
+            }
         }
+
         public void SaveXML()
-        { 
+        {
             System.Xml.Serialization.XmlSerializer writer = new System.Xml.Serialization.XmlSerializer(typeof(DataModel));
             StreamWriter wfile = new System.IO.StreamWriter(@"../../Models/TemporaryDataModel.xml");
             writer.Serialize(wfile, temp);
             wfile.Close();
         }
-        public void SaveType(string type)
-        {
-            temp.type = type;
-        }
-        public void SaveNumber(string number)
-        {
-            temp.number = number;
-        }
-        public void SaveClientName(string clientName)
-        {
-            temp.clientName = clientName;
-        }
-        public void SaveWidth(string width)
-        {
-            temp.width = width;
-        }
-        public void SaveHeight(string height)
-        {
-            temp.height = height;
-        }
 
         public string ClientName
         {
-            get { return ReadXML().clientName; }
+            get { return DataModel.ReadXML().clientName; }
             set 
             {
-                SaveClientName(value);
+                checkState();
+                temp.clientName = value;
                 SaveXML();
+                temp = DataModel.ReadXML();
                 NotifyOfPropertyChange(() => ClientName);
             }
         }
         public string Type
         {
-            get { return ReadXML().type; }
+            get { return DataModel.ReadXML().type; }
             set
             {
-                SaveType(value);
+                checkState();
+                temp.type = value;
                 SaveXML();
+                temp = DataModel.ReadXML();
                 NotifyOfPropertyChange(() => Type);
             }
         }
         public string Number
         {
-            get { return ReadXML().number; }
+            get { return DataModel.ReadXML().number; }
             set
             {
-                SaveNumber(value);
+                checkState();
+                temp.number = value;
                 SaveXML();
+                temp = DataModel.ReadXML();
                 NotifyOfPropertyChange(() => Number);
             }
         }
         public string Width
         {
-            get { return ReadXML().width; }
+            get { return DataModel.ReadXML().width; }
             set
             {
-                SaveWidth(value);
+                checkState();
+                temp.width = value;
                 SaveXML();
+                temp = DataModel.ReadXML();
                 NotifyOfPropertyChange(() => Width);
             }
         }
         public string Height
         {
-            get { return ReadXML().height; }
+            get { return DataModel.ReadXML().height; }
             set
             {
-                SaveHeight(value);
+                checkState();
+                temp.height = value;
                 SaveXML();
+                temp = DataModel.ReadXML();
                 NotifyOfPropertyChange(() => Height);
+            }
+        }
+        public string Color
+        {
+            get { return DataModel.ReadXML().color; }
+            set
+            {
+                checkState();
+                temp.color = value;
+                SaveXML();
+                temp = DataModel.ReadXML();
+                NotifyOfPropertyChange(() => Color);
+            }
+        }
+        public string Notes
+        {
+            get { return DataModel.ReadXML().notes; }
+            set
+            {
+                checkState();
+                temp.notes = value;
+                SaveXML();
+                temp = DataModel.ReadXML();
+                NotifyOfPropertyChange(() => Notes);
             }
         }
     }

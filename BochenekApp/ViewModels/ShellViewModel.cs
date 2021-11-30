@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BochenekApp.Models;
+using System.Windows;
+using System.Reflection;
 
 namespace BochenekApp.ViewModels
 {
@@ -14,21 +17,6 @@ namespace BochenekApp.ViewModels
         {
 
         }
-        protected string _firstName;
-        public string FirstName
-        {
-            get
-            {
-                return _firstName;
-            }
-            set
-            {
-                _firstName = value;
-                NotifyOfPropertyChange(() => FirstName);
-            }
-        }
-
-
         public void LoadPageOne()
         {
             ActivateItemAsync(new FormViewModel());
@@ -37,6 +25,12 @@ namespace BochenekApp.ViewModels
         public void LoadPageTwo()
         {
             ActivateItemAsync(new TableViewModel());
+        }
+        public void ClearData()
+        {
+            DataModel.ClearData();
+            ActivateItemAsync(new TableViewModel());
+            MessageBox.Show("Hey");
         }
     }
 }
