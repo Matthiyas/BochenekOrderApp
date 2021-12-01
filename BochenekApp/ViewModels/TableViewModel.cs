@@ -19,7 +19,7 @@ namespace BochenekApp.ViewModels
 {
     public class TableViewModel : TableView
     {
-
+        private int _counter = DataModel.ReadXML().counter;
         private string _type = DataModel.ReadXML().type;
         private string _number = DataModel.ReadXML().number;
         private string _clientName = DataModel.ReadXML().clientName;
@@ -27,9 +27,7 @@ namespace BochenekApp.ViewModels
         private string _heig = DataModel.ReadXML().heig;
         private string _color = DataModel.ReadXML().color;
         private string _notes = DataModel.ReadXML().notes;
-
-
-
+        
 
 
         public TableViewModel(bool isSaving=false)
@@ -39,22 +37,30 @@ namespace BochenekApp.ViewModels
                 
                 UserControl uc = GetImage();
                 
-                Rect rect = new Rect(0, 0, uc.Width, uc.Height);
+                Rect rect = new Rect(20, 20, uc.Width, uc.Height);
 
-                RenderTargetBitmap rtb = new RenderTargetBitmap((int)uc.Width, (int)uc.Height, 96, 96, PixelFormats.Pbgra32);
+                RenderTargetBitmap rtb = new RenderTargetBitmap(3508, 2480, 240, 220, PixelFormats.Pbgra32);
 
                 uc.Arrange(rect);
                 rtb.Render(uc);
 
                 PngBitmapEncoder png = new PngBitmapEncoder();
                 png.Frames.Add(BitmapFrame.Create(rtb));
-                var stream = File.Create(@"C:\Users\Maciek\source\repos\BochenekApp\order.bmp");
+
+                string path = @"../../Zlecenia/zlecenie"+_counter+".png";
+                var stream = File.Create(path);
+
                 png.Save(stream);
-                System.Windows.MessageBox.Show(this.Color);
+                stream.Close();
+
             }        
         }
 
-
+        public string Counter
+        {
+            get { return " Numer: "+_counter.ToString(); }
+            set { _counter = Int32.Parse(value); }
+        }
         public string Type
         {
             get { return _type; }
@@ -91,6 +97,4 @@ namespace BochenekApp.ViewModels
             set { _notes = value; }
         }
     }
-
-
 }

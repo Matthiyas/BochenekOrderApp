@@ -29,6 +29,7 @@ namespace BochenekApp.Views
         {
             UserControl uc = (UserControl)FindName("Table");
 
+            TextBlock count = (TextBlock)FindName("count");
             TextBlock typ = (TextBlock)FindName("typ");
             TextBlock num = (TextBlock)FindName("num");
             TextBlock client = (TextBlock)FindName("client");
@@ -37,6 +38,7 @@ namespace BochenekApp.Views
             TextBlock col = (TextBlock)FindName("col");
             TextBlock note = (TextBlock)FindName("note");
 
+            count.Text = " Numer: "+DataModel.ReadXML().counter.ToString();
             typ.Text = DataModel.ReadXML().type;
             num.Text = DataModel.ReadXML().number+"szt.";
             client.Text = DataModel.ReadXML().clientName;
@@ -51,21 +53,6 @@ namespace BochenekApp.Views
         public TableView()
         {
             InitializeComponent();
-            
-            //UserControl uc = (UserControl)FindName("Table");
-
-            //Rect rect = new Rect(0, 0, uc.Width, uc.Height);
-
-            //RenderTargetBitmap rtb = new RenderTargetBitmap((int)uc.Width, (int)uc.Height, 96, 96, PixelFormats.Pbgra32);
-
-            //uc.Arrange(rect);
-            //rtb.Render(uc);
-
-            //PngBitmapEncoder png = new PngBitmapEncoder();
-            //png.Frames.Add(BitmapFrame.Create(rtb));
-            //var stream = File.Create(@"C:\Users\Maciek\source\repos\BochenekApp\order.bmp");
-            //png.Save(stream);
-
         }
     }
 }

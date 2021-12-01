@@ -12,6 +12,7 @@ namespace BochenekApp.Models
     public class DataModel
     {
         public bool state;
+        public int counter;
         public string type;
         public string number;
         public string clientName;
@@ -35,17 +36,24 @@ namespace BochenekApp.Models
         public static DataModel ReadXML()
         {
             System.Xml.Serialization.XmlSerializer reader = new System.Xml.Serialization.XmlSerializer(typeof(DataModel));
-            System.IO.StreamReader file = new System.IO.StreamReader(@"../../Models/TemporaryDataModel.xml");
+            StreamReader file = new StreamReader(@"../../Models/TemporaryDataModel.xml");
             DataModel overview = (DataModel)reader.Deserialize(file);
             file.Close();
 
             return overview;
         }
-        public static void ClearData()
+        public static void ClearData(bool isNewOrder=false)
         {
+            int c = ReadXML().counter;
+            if (isNewOrder)
+            {
+                c += Int32.Parse(ReadXML().number);
+            }    
+            
             DataModel emptyData = new DataModel();
+            emptyData.counter = c;
             System.Xml.Serialization.XmlSerializer writer = new System.Xml.Serialization.XmlSerializer(typeof(DataModel));
-            StreamWriter wfile = new System.IO.StreamWriter(@"../../Models/TemporaryDataModel.xml");
+            StreamWriter wfile = new StreamWriter(@"../../Models/TemporaryDataModel.xml");
             writer.Serialize(wfile, emptyData);
             wfile.Close();
         }

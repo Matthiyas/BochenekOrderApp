@@ -49,14 +49,15 @@ namespace BochenekApp.ViewModels
         public void SaveOrder()
         {
             
-            //System.Windows.MessageBox.Show(this.TableViewModel);
-            
 
             DialogResult dialog = System.Windows.Forms.MessageBox.Show("Na pewno utworzyć nowe zamówienie?", "Dane", MessageBoxButtons.YesNo);
 
             if (dialog == DialogResult.Yes)
             {
                 ActivateItemAsync(new TableViewModel(true));
+                DataModel.ClearData(true);
+                System.Windows.Forms.MessageBox.Show("Dodano nowe zlecenie!");
+                ActivateItemAsync(new TableViewModel());
             }
         }
     }

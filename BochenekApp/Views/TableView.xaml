@@ -70,8 +70,8 @@
                 <Border BorderBrush="Black" BorderThickness="0 0 1 1"/>
             </Grid>
             <!--Third column of 1st row-->
-            <TextBlock Grid.Column="2"
-                   Text="Numer: 4215" FontSize="17"/>
+            <TextBlock x:Name="count" Grid.Column="2"
+                   Text="{Binding Path=Counter, Mode=OneWay}" FontSize="17"/>
             <Border BorderBrush="Black" Grid.Column="2"
                     BorderThickness="0 0 1 1"/>
 

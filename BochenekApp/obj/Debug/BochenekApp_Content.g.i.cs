@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/test.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/countermodel.txt")]
 
 
