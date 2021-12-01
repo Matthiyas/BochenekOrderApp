@@ -7,20 +7,54 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Xml;
 using BochenekApp.Models;
+using BochenekApp.Views;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
+using System.Windows.Media;
+using System.Windows.Markup;
+using System.Windows;
+using System.Drawing;
 
 namespace BochenekApp.ViewModels
 {
-    public class TableViewModel
+    public class TableViewModel : TableView
     {
 
         private string _type = DataModel.ReadXML().type;
         private string _number = DataModel.ReadXML().number;
         private string _clientName = DataModel.ReadXML().clientName;
-        private string _width = DataModel.ReadXML().width;
-        private string _height = DataModel.ReadXML().height;
+        private string _wid = DataModel.ReadXML().wid;
+        private string _heig = DataModel.ReadXML().heig;
         private string _color = DataModel.ReadXML().color;
         private string _notes = DataModel.ReadXML().notes;
-   
+
+
+
+
+
+        public TableViewModel(bool isSaving=false)
+        {
+            if (isSaving == true)
+            {
+                
+                UserControl uc = GetImage();
+                
+                Rect rect = new Rect(0, 0, uc.Width, uc.Height);
+
+                RenderTargetBitmap rtb = new RenderTargetBitmap((int)uc.Width, (int)uc.Height, 96, 96, PixelFormats.Pbgra32);
+
+                uc.Arrange(rect);
+                rtb.Render(uc);
+
+                PngBitmapEncoder png = new PngBitmapEncoder();
+                png.Frames.Add(BitmapFrame.Create(rtb));
+                var stream = File.Create(@"C:\Users\Maciek\source\repos\BochenekApp\order.bmp");
+                png.Save(stream);
+                System.Windows.MessageBox.Show(this.Color);
+            }        
+        }
+
+
         public string Type
         {
             get { return _type; }
@@ -36,15 +70,15 @@ namespace BochenekApp.ViewModels
             get { return _clientName; }
             set { _clientName = value; }
         }
-        public string Width
+        public string Wid
         {
-            get { return _width; }
-            set { _width = value; }
+            get { return _wid; }
+            set { _wid = value; }
         }
-        public string Height
+        public string Heig
         {
-            get { return _height; }
-            set { _height = value; }
+            get { return _heig; }
+            set { _heig = value; }
         }
         public string Color
         {

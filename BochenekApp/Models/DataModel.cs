@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Media;
 
 namespace BochenekApp.Models
 {
@@ -13,8 +15,8 @@ namespace BochenekApp.Models
         public string type;
         public string number;
         public string clientName;
-        public string width;
-        public string height;
+        public string wid;
+        public string heig;
         public string color;
         public string notes;
 
@@ -24,8 +26,8 @@ namespace BochenekApp.Models
             type = "";
             number = "";
             clientName = "";
-            width = "";
-            height = "";
+            wid = "";
+            heig = "";
             color = "";
             notes = "";
         }
@@ -48,5 +50,4 @@ namespace BochenekApp.Models
             wfile.Close();
         }
     }
-
 }

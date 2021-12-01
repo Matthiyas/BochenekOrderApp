@@ -42,10 +42,10 @@
         <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="6" Grid.Column="1" x:Name="ClientName"></TextBox>
         
         <TextBlock Grid.Row="7" Grid.Column="1">Szerokość:</TextBlock>
-        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="8" Grid.Column="1" x:Name="Width"></TextBox>
+        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="8" Grid.Column="1" x:Name="Wid"></TextBox>
         
         <TextBlock Grid.Row="9" Grid.Column="1">Wysokość:</TextBlock>
-        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="10" Grid.Column="1" x:Name="Height"></TextBox>
+        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="10" Grid.Column="1" x:Name="Heig"></TextBox>
 
         <TextBlock Grid.Row="11" Grid.Column="1">Kolor:</TextBlock>
         <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="12" Grid.Column="1" x:Name="Color"></TextBox>

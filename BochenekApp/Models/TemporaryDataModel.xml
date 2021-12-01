@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DataModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <state>false</state>
-  <type />
-  <number />
-  <clientName />
-  <width />
-  <height />
-  <color />
-  <notes />
+  <state>true</state>
+  <type>Brama uchylna</type>
+  <number>2</number>
+  <clientName>Paweł Florek</clientName>
+  <wid>2.4</wid>
+  <heig>2.1</heig>
+  <color>Brąz</color>
+  <notes>brak</notes>
 </DataModel>

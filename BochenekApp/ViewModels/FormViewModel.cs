@@ -68,28 +68,28 @@ namespace BochenekApp.ViewModels
                 NotifyOfPropertyChange(() => Number);
             }
         }
-        public string Width
+        public string Wid
         {
-            get { return DataModel.ReadXML().width; }
+            get { return DataModel.ReadXML().wid; }
             set
             {
                 checkState();
-                temp.width = value;
+                temp.wid = value;
                 SaveXML();
                 temp = DataModel.ReadXML();
-                NotifyOfPropertyChange(() => Width);
+                NotifyOfPropertyChange(() => Wid);
             }
         }
-        public string Height
+        public string Heig
         {
-            get { return DataModel.ReadXML().height; }
+            get { return DataModel.ReadXML().heig; }
             set
             {
                 checkState();
-                temp.height = value;
+                temp.heig = value;
                 SaveXML();
                 temp = DataModel.ReadXML();
-                NotifyOfPropertyChange(() => Height);
+                NotifyOfPropertyChange(() => Heig);
             }
         }
         public string Color
