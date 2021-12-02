@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DataModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <state>false</state>
-  <counter>2</counter>
-  <type />
+  <state>true</state>
+  <counter>7</counter>
+  <type>Drzwi stalowe</type>
   <number />
   <clientName />
   <wid />
   <heig />
   <color />
   <notes />
+  <TypesIndex>0</TypesIndex>
 </DataModel>

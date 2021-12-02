@@ -33,7 +33,12 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="1" Grid.Column="1">Rodzaj wyrobu:</TextBlock>
-        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="2" Grid.Column="1" x:Name="Type"></TextBox>
+        
+        <ComboBox Margin="0,5,0,20" MinWidth="100" Grid.Row="2" Grid.Column="1"
+                  x:Name="Types" SelectedItem="{Binding Path=SelectedType,Mode=TwoWay}"
+                  DisplayMemberPath="TypesCombo">
+        </ComboBox>
+        <TextBlock Visibility="Hidden" x:Name="Type"/>
 
         <TextBlock Grid.Row="3" Grid.Column="1">Ilość:</TextBlock>
         <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="4" Grid.Column="1" x:Name="Number"></TextBox>

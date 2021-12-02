@@ -14,6 +14,15 @@ namespace BochenekApp.ViewModels
     {
         
         private static DataModel temp = DataModel.ReadXML();
+        private BindableCollection<DataModel> _types = new BindableCollection<DataModel>();
+        private DataModel _selectedType;
+
+        public FormViewModel()
+        {
+            Types.Add(new DataModel { TypesIndex = 0, TypesCombo = "Drzwi stalowe" });
+            Types.Add(new DataModel { TypesIndex = 1, TypesCombo = "Brama uchylna" });
+            Types.Add(new DataModel { TypesIndex = 2, TypesCombo = "Brama automatyczna" });
+        }
 
         public void checkState()
         {
@@ -21,6 +30,30 @@ namespace BochenekApp.ViewModels
             { 
                 temp = DataModel.ReadXML();
                 temp.state = true;
+            }
+        }
+
+        public BindableCollection<DataModel> Types
+        {
+            get { return _types; }
+            set 
+            { 
+                _types = value;
+            }
+        }
+        
+        public DataModel SelectedType
+        {
+            get { return _selectedType; }
+            set 
+            {
+                _selectedType = value;
+                NotifyOfPropertyChange(() => SelectedType);
+                checkState();
+                temp.type = value.TypesCombo;
+                SaveXML();
+                temp = DataModel.ReadXML();
+                
             }
         }
 
@@ -47,14 +80,7 @@ namespace BochenekApp.ViewModels
         public string Type
         {
             get { return DataModel.ReadXML().type; }
-            set
-            {
-                checkState();
-                temp.type = value;
-                SaveXML();
-                temp = DataModel.ReadXML();
-                NotifyOfPropertyChange(() => Type);
-            }
+            set {}
         }
         public string Number
         {

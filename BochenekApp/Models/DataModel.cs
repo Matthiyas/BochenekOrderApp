@@ -20,6 +20,8 @@ namespace BochenekApp.Models
         public string heig;
         public string color;
         public string notes;
+        public string TypesCombo { get; set; }
+        public int TypesIndex { get; set; }
 
         public DataModel()
         {
@@ -57,5 +59,6 @@ namespace BochenekApp.Models
             writer.Serialize(wfile, emptyData);
             wfile.Close();
         }
+
     }
 }
