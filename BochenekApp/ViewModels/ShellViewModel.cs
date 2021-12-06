@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media;
 using System.Windows.Controls;
 using BochenekApp.Views;
+using System.Diagnostics;
 
 namespace BochenekApp.ViewModels
 {
@@ -44,6 +45,14 @@ namespace BochenekApp.ViewModels
             }
         }
 
+        public void OpenOrders()
+        {
+            Process.Start(@"..\..\Zlecenia");
+        }
+        public void CloseApp()
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
 
         public System.Windows.Controls.UserControl TableViewModel { get; set; }
         public void SaveOrder()

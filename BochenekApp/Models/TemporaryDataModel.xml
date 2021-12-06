@@ -2,8 +2,8 @@
 <DataModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <state>true</state>
   <counter>7</counter>
-  <type>Drzwi stalowe</type>
-  <number />
+  <type>Brama uchylna</type>
+  <number>2</number>
   <clientName />
   <wid />
   <heig />

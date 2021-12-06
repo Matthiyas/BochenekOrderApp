@@ -26,11 +26,15 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Button x:Name="LoadPageOne" Grid.Row="0">Dane</Button>
             <Button x:Name="LoadPageTwo" Grid.Row="1">Podgląd</Button>
             <Button x:Name="SaveOrder" Grid.Row="2">Utwórz</Button>
             <Button x:Name="ClearData" Grid.Row="3">Wyczyść</Button>
+            <Button x:Name="OpenOrders" Grid.Row="4">Zamówienia</Button>
+            <Button x:Name="CloseApp" Grid.Row="5">Wyjdź</Button>
         </Grid>
         
         

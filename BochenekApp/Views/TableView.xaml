@@ -292,7 +292,7 @@
 
             <!--Right side-->
             <Rectangle x:Name="rec" Grid.Column="1" Stroke="Black"
-                       Height="250" Width="200" StrokeThickness="3"/>
+                       Height="200" Width="300" StrokeThickness="3"/>
 
             <Border BorderBrush="Black" BorderThickness="0 0 1 0" 
                     Grid.Column="0" Grid.Row="0"/>
