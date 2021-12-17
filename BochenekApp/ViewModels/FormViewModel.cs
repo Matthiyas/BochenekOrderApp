@@ -21,7 +21,7 @@ namespace BochenekApp.ViewModels
         {
             Types.Add(new DataModel { TypesIndex = 0, TypesCombo = "Drzwi stalowe" });
             Types.Add(new DataModel { TypesIndex = 1, TypesCombo = "Brama uchylna" });
-            Types.Add(new DataModel { TypesIndex = 2, TypesCombo = "Brama automatyczna" });
+            Types.Add(new DataModel { TypesIndex = 2, TypesCombo = "Brama dwuskrzydłowa" });
         }
 
         public void checkState()

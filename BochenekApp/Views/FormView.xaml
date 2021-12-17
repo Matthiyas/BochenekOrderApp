@@ -8,15 +8,18 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
+            <RowDefinition MinHeight="40" Height="auto"/>
+            <RowDefinition MinHeight="80" Height="auto"/>
             <RowDefinition MinHeight="40" Height="auto"/>
             <RowDefinition MinHeight="80" Height="auto"/>
             <RowDefinition MinHeight="40" Height="auto"/>
@@ -34,30 +37,52 @@
 
         <TextBlock Grid.Row="1" Grid.Column="1">Rodzaj wyrobu:</TextBlock>
         
-        <ComboBox Margin="0,5,0,20" MinWidth="100" Grid.Row="2" Grid.Column="1"
+        <ComboBox Margin="0,5,0,10" MinWidth="100" Grid.Row="2" Grid.Column="1"
                   x:Name="Types" SelectedItem="{Binding Path=SelectedType,Mode=TwoWay}"
                   DisplayMemberPath="TypesCombo">
         </ComboBox>
         <TextBlock Visibility="Hidden" x:Name="Type"/>
 
         <TextBlock Grid.Row="3" Grid.Column="1">Ilość:</TextBlock>
-        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="4" Grid.Column="1" x:Name="Number"></TextBox>
+        <TextBox Margin="0,0,0,10" MinWidth="100" Grid.Row="4" Grid.Column="1" x:Name="Number"></TextBox>
 
         <TextBlock Grid.Row="5" Grid.Column="1">Klient:</TextBlock>
-        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="6" Grid.Column="1" x:Name="ClientName"></TextBox>
+        <TextBox Margin="0,0,0,10" MinWidth="100" Grid.Row="6" Grid.Column="1" x:Name="ClientName"></TextBox>
         
-        <TextBlock Grid.Row="7" Grid.Column="1">Szerokość:</TextBlock>
-        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="8" Grid.Column="1" x:Name="Wid"></TextBox>
+        <TextBlock Grid.Row="7" Grid.Column="1">Uwagi:</TextBlock>
+        <TextBox Margin="0,5,0,10" MinWidth="100" Grid.Row="8" Grid.Column="1" x:Name="Notes"></TextBox>
         
-        <TextBlock Grid.Row="9" Grid.Column="1">Wysokość:</TextBlock>
-        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="10" Grid.Column="1" x:Name="Heig"></TextBox>
+        <TextBlock Grid.Row="1" Grid.Column="3">Szerokość:</TextBlock>
+        <TextBox Margin="0,5,0,10" MinWidth="100" Grid.Row="2" Grid.Column="3" x:Name="Wid"></TextBox>
+        
+        <TextBlock Grid.Row="3" Grid.Column="3">Wysokość:</TextBlock>
+        <TextBox Margin="0,5,0,10" MinWidth="100" Grid.Row="4" Grid.Column="3" x:Name="Heig"></TextBox>
 
-        <TextBlock Grid.Row="11" Grid.Column="1">Kolor:</TextBlock>
-        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="12" Grid.Column="1" x:Name="Color"></TextBox>
-        
-        <TextBlock Grid.Row="1" Grid.Column="2">Uwagi:</TextBlock>
-        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="2" Grid.Column="2" x:Name="Notes"></TextBox>
+        <TextBlock Grid.Row="5" Grid.Column="3">Kolor:</TextBlock>
+        <TextBox Margin="0,5,0,10" MinWidth="100" Grid.Row="6" Grid.Column="3" x:Name="Color"></TextBox>
 
+        <TextBlock Grid.Row="1" Margin="0,5,0,10" Grid.Column="5">Wymagania dodatkowe:</TextBlock>
+        <WrapPanel Grid.Row="2" Margin="0,5,0,10" Grid.Column="5">
+            <TextBlock Margin="20 0">-Typ trapezu: </TextBlock>
+            <ComboBox MinWidth="250">
+                <ComboBoxItem>Poziomy</ComboBoxItem>
+                <ComboBoxItem>Pionowy</ComboBoxItem>
+            </ComboBox>
+        </WrapPanel>
+        
+        <WrapPanel Grid.Row="3" Margin="0,5,0,10" Grid.Column="5">
+            <TextBlock Margin="20 0">-Trapez: </TextBlock>
+            <ComboBox MinWidth="250">
+                <ComboBoxItem>R-8</ComboBoxItem>
+                <ComboBoxItem>R-13</ComboBoxItem>
+            </ComboBox>
+        </WrapPanel>
+        
+
+
+        <Border Grid.Column="0" Grid.ColumnSpan="7" Margin="70 -10"
+                Grid.Row="1" Grid.RowSpan="10" BorderThickness="1" BorderBrush="Black"/>
+        
 
     </Grid>
 </UserControl>

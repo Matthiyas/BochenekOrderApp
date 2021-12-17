@@ -37,6 +37,8 @@ namespace BochenekApp.Views
             TextBlock heig = (TextBlock)FindName("heig");
             TextBlock col = (TextBlock)FindName("col");
             TextBlock note = (TextBlock)FindName("note");
+            TextBlock currentDate = (TextBlock)FindName("currentDate");
+            
 
             count.Text = " Numer: "+DataModel.ReadXML().counter.ToString();
             typ.Text = DataModel.ReadXML().type;
@@ -46,6 +48,7 @@ namespace BochenekApp.Views
             heig.Text = DataModel.ReadXML().heig;
             col.Text = DataModel.ReadXML().color;
             note.Text = DataModel.ReadXML().notes;
+            currentDate.Text = DateTime.Today.ToString("dddd ") + DateTime.Today.ToString("d");
 
             return uc;
         }

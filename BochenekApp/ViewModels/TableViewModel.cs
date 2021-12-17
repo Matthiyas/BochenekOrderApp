@@ -27,11 +27,14 @@ namespace BochenekApp.ViewModels
         private string _heig = DataModel.ReadXML().heig;
         private string _color = DataModel.ReadXML().color;
         private string _notes = DataModel.ReadXML().notes;
+        private int _recH = 0;
+        private int _recW = 0;
         
 
 
         public TableViewModel(bool isSaving=false)
         {
+
             if (isSaving == true)
             {
                 
@@ -60,6 +63,11 @@ namespace BochenekApp.ViewModels
         {
             get { return " Numer: "+_counter.ToString(); }
             set { _counter = Int32.Parse(value); }
+        }
+
+        public string Today
+        {
+            get { return DateTime.Today.ToString("dddd ")+ DateTime.Today.ToString("d"); }
         }
         public string Type
         {
@@ -95,6 +103,26 @@ namespace BochenekApp.ViewModels
         {
             get { return _notes; }
             set { _notes = value; }
+        }
+        public int RecH
+        {
+            get
+            {
+                if (_type == "Brama uchylna") return 270;
+                else if (_type == "Drzwi stalowe") return 350;
+                else return _recW;
+            }
+            set { _recH = value; }
+        }
+        public int RecW
+        {
+            get 
+            {
+                if (_type == "Brama uchylna") return 450;
+                else if (_type == "Drzwi stalowe") return 200;
+                else return _recH;
+            }
+            set { _recW = value; }
         }
     }
 }

@@ -41,7 +41,7 @@ namespace BochenekApp.ViewModels
             if(dialog == DialogResult.Yes)
             {
                 DataModel.ClearData();
-                ActivateItemAsync(new TableViewModel());
+                ActivateItemAsync(new FormViewModel());
             }
         }
 
