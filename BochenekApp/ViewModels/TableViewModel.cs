@@ -26,9 +26,12 @@ namespace BochenekApp.ViewModels
         private string _wid = DataModel.ReadXML().wid;
         private string _heig = DataModel.ReadXML().heig;
         private string _color = DataModel.ReadXML().color;
+        private string _trapeze = DataModel.ReadXML().trapeze;
+        private string _trapeType = DataModel.ReadXML().trapeType;
         private string _notes = DataModel.ReadXML().notes;
         private int _recH = 0;
         private int _recW = 0;
+        private string _recFill = "../Models/Images/trapeTypePi.jpg";
         
 
 
@@ -99,6 +102,16 @@ namespace BochenekApp.ViewModels
             get { return _color; }
             set { _color = value; }
         }
+        public string Trapeze
+        {
+            get { return _trapeze; }
+            set { _trapeze = value; }
+        }
+        public string TrapeType
+        {
+            get { return _trapeType; }
+            set { _trapeType = value; }
+        }
         public string Notes
         {
             get { return _notes; }
@@ -110,7 +123,7 @@ namespace BochenekApp.ViewModels
             {
                 if (_type == "Brama uchylna") return 270;
                 else if (_type == "Drzwi stalowe") return 350;
-                else return _recW;
+                else return 290;
             }
             set { _recH = value; }
         }
@@ -120,9 +133,19 @@ namespace BochenekApp.ViewModels
             {
                 if (_type == "Brama uchylna") return 450;
                 else if (_type == "Drzwi stalowe") return 200;
-                else return _recH;
+                else return 500;
             }
             set { _recW = value; }
+        }
+        public string RecFill
+        {
+            get 
+            {
+                if (_trapeType == "Pionowy") return "../Models/Images/trapeTypePi.jpg";
+                else if (_trapeType == "Poziomy") return "../Models/Images/trapeTypePo.jpg";
+                else return _trapeType;
+            }
+            set { _recFill = value; }
         }
     }
 }

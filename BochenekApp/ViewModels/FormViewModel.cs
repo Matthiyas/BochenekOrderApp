@@ -24,7 +24,12 @@ namespace BochenekApp.ViewModels
         private BindableCollection<DataModel> _colors = new BindableCollection<DataModel>();
         private DataModel _selectedColor;
 
-        
+        private BindableCollection<DataModel> _trapezes = new BindableCollection<DataModel>();
+        private DataModel _selectedTrapeze;
+
+        private BindableCollection<DataModel> _trapeTypes = new BindableCollection<DataModel>();
+        private DataModel _selectedTrapeType;
+
         public FormViewModel()
         {
             Types.Add(new DataModel { TypesIndex = "0", TypesCombo = "Drzwi stalowe" });
@@ -36,6 +41,12 @@ namespace BochenekApp.ViewModels
             Colors.Add(new DataModel { ColorsIndex = 2, ColorsCombo = "Multigloss" });
             Colors.Add(new DataModel { ColorsIndex = 3, ColorsCombo = "Winchester" });
             Colors.Add(new DataModel { ColorsIndex = 4, ColorsCombo = "Ciemny dąb" });
+
+            Trapezes.Add(new DataModel { TrapezesIndex = "0", TrapezesCombo = "R-8" });
+            Trapezes.Add(new DataModel { TrapezesIndex = "1", TrapezesCombo = "R-13" });
+            
+            TrapeTypes.Add(new DataModel { TrapeTypesIndex = "0", TrapeTypesCombo = "Pionowy" });
+            TrapeTypes.Add(new DataModel { TrapeTypesIndex = "1", TrapeTypesCombo = "Poziomy" });
         }
 
         public void checkState()
@@ -104,6 +115,68 @@ namespace BochenekApp.ViewModels
                 checkState();
                 temp.colorIndex = value.ColorsIndex;
                 temp.color = value.ColorsCombo;
+                SaveXML();
+                temp = DataModel.ReadXML();
+            }
+        }
+
+        //combobox Trapezes
+        public BindableCollection<DataModel> Trapezes
+        {
+            get { return _trapezes; }
+            set
+            {
+                _trapezes = value;
+            }
+        }
+        public string CurrentTrapeze
+        {
+            get
+            {
+                return DataModel.ReadXML().trapezeIndex;
+            }
+        }
+        public DataModel SelectedTrapeze
+        {
+            get { return _selectedTrapeze; }
+            set
+            {
+                _selectedTrapeze = value;
+                NotifyOfPropertyChange(() => SelectedTrapeze);
+                checkState();
+                temp.trapezeIndex = value.TrapezesIndex;
+                temp.trapeze = value.TrapezesCombo;
+                SaveXML();
+                temp = DataModel.ReadXML();
+            }
+        }
+
+        //combobox trapetypes
+        public BindableCollection<DataModel> TrapeTypes
+        {
+            get { return _trapeTypes; }
+            set
+            {
+                _trapeTypes = value;
+            }
+        }
+        public string CurrentTrapeType
+        {
+            get
+            {
+                return DataModel.ReadXML().trapeTypeIndex;
+            }
+        }
+        public DataModel SelectedTrapeType
+        {
+            get { return _selectedTrapeType; }
+            set
+            {
+                _selectedTrapeType = value;
+                NotifyOfPropertyChange(() => SelectedTrapeType);
+                checkState();
+                temp.trapeTypeIndex = value.TrapeTypesIndex;
+                temp.trapeType = value.TrapeTypesCombo;
                 SaveXML();
                 temp = DataModel.ReadXML();
             }

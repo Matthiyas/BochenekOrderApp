@@ -21,12 +21,22 @@ namespace BochenekApp.Models
         public string heig;
         public string color;
         public int colorIndex;
+        public string trapeze;
+        public string trapezeIndex;
+        public string trapeType;
+        public string trapeTypeIndex;
         public string notes;
         public string TypesCombo { get; set; }
         public string TypesIndex { get; set; }
 
         public string ColorsCombo { get; set; }
         public int ColorsIndex { get; set; }
+
+        public string TrapezesCombo { get; set; }
+        public string TrapezesIndex { get; set; }
+
+        public string TrapeTypesCombo { get; set; }
+        public string TrapeTypesIndex { get; set; }
 
         public DataModel()
         {
@@ -39,6 +49,8 @@ namespace BochenekApp.Models
             heig = "";
             color = "";
             colorIndex = -1;
+            trapeze = "";
+            trapezeIndex = "-1";
             notes = "";
         }
 

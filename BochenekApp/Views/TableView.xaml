@@ -133,9 +133,18 @@
                    TextAlignment="Center" FontSize="16"
                    Padding="10"/>
 
-            <TextBlock Grid.Column="4" Grid.Row="1"
-                   TextAlignment="Center" FontSize="16"
-                   Padding="10"/>
+            <StackPanel Grid.Row="1" Grid.Column="4">
+                <WrapPanel>
+                    <TextBlock Padding="10" TextAlignment="Center" FontSize="16">*Trapez:</TextBlock>
+                    <TextBlock x:Name="tra" Text="{Binding Path=Trapeze, Mode=OneWay}" TextAlignment="Center" FontSize="16"
+                        Padding="10" FontWeight="Bold"/>
+                </WrapPanel>
+                <WrapPanel>
+                    <TextBlock Padding="10" TextAlignment="Center" FontSize="16">*Typ trapezu:</TextBlock>
+                    <TextBlock x:Name="traType" Text="{Binding Path=TrapeType, Mode=OneWay}" TextAlignment="Center" FontSize="16"
+                        Padding="10" FontWeight="Bold"/>
+                </WrapPanel>
+            </StackPanel>
 
             <TextBlock x:Name="col" Grid.Column="5" Grid.Row="1" Text="{Binding Path=Color, Mode=OneWay}"
                    TextAlignment="Center" FontSize="16"
@@ -281,8 +290,30 @@
             </Grid>
 
             <!--Right side-->
-            <Rectangle x:Name="rec" Grid.Column="1" Stroke="Black"
-                       Height="{Binding Path=RecH, Mode=OneWay}" Width="{Binding Path=RecW, Mode=OneWay}" StrokeThickness="3"/>
+            <!--<Rectangle Grid.Column="1" Stroke="Black"
+                       Height="200" Width="300" StrokeThickness="3">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="../Models/Images/trapeTypeP.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>-->
+            <Rectangle x:Name="bord" Grid.Column="1" Stroke="Black"
+                       Height="{Binding Path=RecH, Mode=OneWay}" Width="{Binding Path=RecW, Mode=OneWay}" StrokeThickness="3">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="{Binding Path=RecFill, Mode=OneWay}"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="bordPo" Grid.Column="1" Stroke="Black" Visibility="Hidden"
+                       Height="{Binding Path=RecH, Mode=OneWay}" Width="{Binding Path=RecW, Mode=OneWay}" StrokeThickness="3">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="../Models/Images/trapeTypePo.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <!--<Canvas x:Name="rec" Grid.Column="1">
+                <Rectangle x:Name="bord" Width="{Binding Path=RecW, Mode=OneWay}" 
+                           Height="{Binding Path=RecH, Mode=OneWay}"
+                           Stroke="Black" StrokeThickness="2"/>
+            </Canvas>-->
 
             <Border BorderBrush="Black" BorderThickness="0 0 1 0" 
                     Grid.Column="0" Grid.Row="0"/>

@@ -17,7 +17,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
             <RowDefinition MinHeight="40" Height="auto"/>
             <RowDefinition MinHeight="80" Height="auto"/>
             <RowDefinition MinHeight="40" Height="auto"/>
@@ -28,7 +28,7 @@
             <RowDefinition MinHeight="80" Height="auto"/>
             <RowDefinition MinHeight="40" Height="auto"/>
             <RowDefinition MinHeight="80" Height="auto"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="1" Grid.Column="1">Rodzaj wyrobu:</TextBlock>
@@ -63,18 +63,18 @@
 
         <TextBlock Grid.Row="1" Margin="0,5,0,10" Grid.Column="5">Wymagania dodatkowe:</TextBlock>
         <WrapPanel Grid.Row="2" Margin="0,5,0,10" Grid.Column="5">
-            <TextBlock Margin="20 0">-Typ trapezu: </TextBlock>
-            <ComboBox MinWidth="250">
-                <ComboBoxItem>Poziomy</ComboBoxItem>
-                <ComboBoxItem>Pionowy</ComboBoxItem>
+            <TextBlock Margin="20 0">-Typ trapezu:</TextBlock>
+            <ComboBox MinWidth="250" x:Name="TrapeTypes" 
+                      SelectedIndex="{Binding Path=CurrentTrapeType, Mode=OneWay}"
+                  DisplayMemberPath="TrapeTypesCombo">
             </ComboBox>
         </WrapPanel>
         
         <WrapPanel Grid.Row="3" Margin="0,5,0,10" Grid.Column="5">
-            <TextBlock Margin="20 0">-Trapez: </TextBlock>
-            <ComboBox MinWidth="250">
-                <ComboBoxItem>R-8</ComboBoxItem>
-                <ComboBoxItem>R-13</ComboBoxItem>
+            <TextBlock Margin="20 0">-Trapez:</TextBlock>
+            <ComboBox MinWidth="250" x:Name="Trapezes" 
+                      SelectedIndex="{Binding Path=CurrentTrapeze, Mode=OneWay}"
+                  DisplayMemberPath="TrapezesCombo">
             </ComboBox>
         </WrapPanel>
         

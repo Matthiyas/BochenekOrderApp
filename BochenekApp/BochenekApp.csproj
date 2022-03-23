@@ -144,5 +144,11 @@
   <ItemGroup>
     <Folder Include="Zlecenia\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Models\Images\trapeTypePo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Models\Images\trapeTypePi.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

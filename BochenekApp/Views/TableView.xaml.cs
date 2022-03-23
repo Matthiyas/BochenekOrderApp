@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Rectangle = System.Windows.Shapes.Rectangle;
 
 namespace BochenekApp.Views
 {
@@ -36,9 +37,41 @@ namespace BochenekApp.Views
             TextBlock wid = (TextBlock)FindName("wid");
             TextBlock heig = (TextBlock)FindName("heig");
             TextBlock col = (TextBlock)FindName("col");
+            TextBlock tra = (TextBlock)FindName("tra");
+            TextBlock traType = (TextBlock)FindName("traType");
             TextBlock note = (TextBlock)FindName("note");
             TextBlock currentDate = (TextBlock)FindName("currentDate");
+
+            //Canvas///////////////////////////////////////////////////////////////////////
+            //Canvas can = (Canvas)FindName("rec");
+            //Rectangle recBorder = new Rectangle();
+            Rectangle recBorder = (Rectangle)FindName("bord");
+
+            if (DataModel.ReadXML().trapeType== "Poziomy")
+            {
+                recBorder= (Rectangle)FindName("bordPo");
+                recBorder.Visibility = Visibility;
+            }
+
+            double recW,recH;
+            if (DataModel.ReadXML().type == "Brama uchylna") recH = 270;
+            else if (DataModel.ReadXML().type == "Drzwi stalowe") recH = 350;
+            else recH = 290;
             
+            if (DataModel.ReadXML().type == "Brama uchylna") recW = 450;
+            else if(DataModel.ReadXML().type == "Drzwi stalowe") recW = 200;
+            else recW = 500;
+
+            recBorder.Width = recW;
+            recBorder.Height = recH;
+            recBorder.Stroke = System.Windows.Media.Brushes.Black; 
+            recBorder.StrokeThickness = 2;
+
+            //can.Children.Add(recBorder);
+
+
+
+            ///////////////////////////////////////////////////////////////////////////////////
 
             count.Text = " Numer: "+DataModel.ReadXML().counter.ToString();
             typ.Text = DataModel.ReadXML().type;
@@ -47,6 +80,8 @@ namespace BochenekApp.Views
             wid.Text = DataModel.ReadXML().wid;
             heig.Text = DataModel.ReadXML().heig;
             col.Text = DataModel.ReadXML().color;
+            tra.Text = DataModel.ReadXML().trapeze;
+            traType.Text = DataModel.ReadXML().trapeType;
             note.Text = DataModel.ReadXML().notes;
             currentDate.Text = DateTime.Today.ToString("dddd ") + DateTime.Today.ToString("d");
 
