@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BochenekApp.Views"
         mc:Ignorable="d" FontSize="32" WindowState="Maximized"
-        Title="App"  MinHeight="768" MinWidth="1360" Height="1080" Width="1920">
-
+        Title="App"  MinHeight="768" MinWidth="1024" Height="1080" Width="1920">
+    <ScrollViewer Margin="30" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -42,4 +42,5 @@
         <ContentControl Grid.Row="1" Grid.Column="2" x:Name="ActiveItem"/>
 
     </Grid>
+    </ScrollViewer>
 </Window>

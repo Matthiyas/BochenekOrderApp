@@ -42,6 +42,33 @@ namespace BochenekApp.ViewModels
             Colors.Add(new DataModel { ColorsIndex = 3, ColorsCombo = "Winchester" });
             Colors.Add(new DataModel { ColorsIndex = 4, ColorsCombo = "Ciemny dąb" });
 
+            Colors.Add(new DataModel { ColorsIndex = 5, ColorsCombo = "RAL 7016 połysk(grafit)" });
+            Colors.Add(new DataModel { ColorsIndex = 6, ColorsCombo = "RAL 7016 mat(antracyt)" });
+            Colors.Add(new DataModel { ColorsIndex = 7, ColorsCombo = "RAL 7024 mat(jasny grafit)" });
+            Colors.Add(new DataModel { ColorsIndex = 8, ColorsCombo = "RAL 8017 połysk(brąz)" });
+            Colors.Add(new DataModel { ColorsIndex = 9, ColorsCombo = "RAL 8017 mat(brąz)" });
+            Colors.Add(new DataModel { ColorsIndex = 10, ColorsCombo = "RAL 8019 mat(ciemny brąz)" });
+            Colors.Add(new DataModel { ColorsIndex = 11, ColorsCombo = "RAL 9005 mat" });
+            Colors.Add(new DataModel { ColorsIndex = 12, ColorsCombo = "RAL 9005 połysk" });
+            Colors.Add(new DataModel { ColorsIndex = 13, ColorsCombo = "RAL 6020 mat" });
+            Colors.Add(new DataModel { ColorsIndex = 14, ColorsCombo = "RAL 6020 połysk" });
+            Colors.Add(new DataModel { ColorsIndex = 15, ColorsCombo = "RAL 6005 połysk(zielony jasny)" });
+            Colors.Add(new DataModel { ColorsIndex = 16, ColorsCombo = "RAL 6005 mat(zielony jasny)" });
+            Colors.Add(new DataModel { ColorsIndex = 17, ColorsCombo = "RAL 3009 połysk(wiśniowy)" });
+            Colors.Add(new DataModel { ColorsIndex = 18, ColorsCombo = "RAL 3009 mat(wiśniowy)" });
+            Colors.Add(new DataModel { ColorsIndex = 19, ColorsCombo = "RAL 3011 połysk(czerwony)" });
+            Colors.Add(new DataModel { ColorsIndex = 20, ColorsCombo = "RAL 3011 mat(czerwony)" });
+            Colors.Add(new DataModel { ColorsIndex = 21, ColorsCombo = "RAL 3005 połysk(burgund)"});
+            Colors.Add(new DataModel { ColorsIndex = 22, ColorsCombo = "RAL 3005 mat(burgund)"});
+            Colors.Add(new DataModel { ColorsIndex = 23, ColorsCombo = "RAL 8004 mat(ceglasty)"});
+            Colors.Add(new DataModel { ColorsIndex = 24, ColorsCombo = "RAL 8004 połysk (ceglasty)"});
+            Colors.Add(new DataModel { ColorsIndex = 25, ColorsCombo = "RAL 9010 połysk(biały)"});
+            Colors.Add(new DataModel { ColorsIndex = 26, ColorsCombo = "RAL 9006 połysk(srebrny)"});
+            Colors.Add(new DataModel { ColorsIndex = 27, ColorsCombo = "RAL 1002 połysk(piaskowy)"});
+            Colors.Add(new DataModel { ColorsIndex = 28, ColorsCombo = "RAL 1021 połysk(żółty)"});
+            Colors.Add(new DataModel { ColorsIndex = 29, ColorsCombo = "RAL 5010 połysk(niebieski)"});
+            Colors.Add(new DataModel { ColorsIndex = 30, ColorsCombo = "Ocynk"});
+
             Trapezes.Add(new DataModel { TrapezesIndex = "0", TrapezesCombo = "R-8" });
             Trapezes.Add(new DataModel { TrapezesIndex = "1", TrapezesCombo = "R-13" });
             

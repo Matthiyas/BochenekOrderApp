@@ -31,7 +31,7 @@ namespace BochenekApp.ViewModels
         private string _notes = DataModel.ReadXML().notes;
         private int _recH = 0;
         private int _recW = 0;
-        private string _recFill = "../Models/Images/trapeTypePi.jpg";
+        private string _recFill = "Hidden";
         
 
 
@@ -139,11 +139,10 @@ namespace BochenekApp.ViewModels
         }
         public string RecFill
         {
-            get 
+            get
             {
-                if (_trapeType == "Pionowy") return "../Models/Images/trapeTypePi.jpg";
-                else if (_trapeType == "Poziomy") return "../Models/Images/trapeTypePo.jpg";
-                else return _trapeType;
+                if (_trapeType == "Poziomy") return "Visible";
+                else return "Hidden";
             }
             set { _recFill = value; }
         }
