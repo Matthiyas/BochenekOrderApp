@@ -150,5 +150,11 @@
   <ItemGroup>
     <Resource Include="Models\Images\trapeTypePi.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Models\Images\logo2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Models\Images\icon.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -49,8 +49,14 @@ namespace BochenekApp.Views
 
             if (DataModel.ReadXML().trapeType== "Poziomy")
             {
-                recBorder= (Rectangle)FindName("bordPo");
-                recBorder.Visibility = Visibility;
+                recBorder.Visibility = Visibility.Hidden;
+                recBorder = (Rectangle)FindName("bordPo");
+                recBorder.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Rectangle off = (Rectangle)FindName("bordPo");
+                off.Visibility = Visibility.Hidden;
             }
 
             double recW,recH;
@@ -65,7 +71,7 @@ namespace BochenekApp.Views
             recBorder.Width = recW;
             recBorder.Height = recH;
             recBorder.Stroke = System.Windows.Media.Brushes.Black; 
-            recBorder.StrokeThickness = 2;
+            recBorder.StrokeThickness = 3;
 
             //can.Children.Add(recBorder);
 

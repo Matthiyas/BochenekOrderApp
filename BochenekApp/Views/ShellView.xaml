@@ -4,10 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BochenekApp.Views"
+        Background="Gray" Icon="../Models/Images/icon.ico"
         mc:Ignorable="d" FontSize="32" WindowState="Maximized"
-        Title="App"  MinHeight="768" MinWidth="1024" Height="1080" Width="1920">
+        Title="BochenekApp"  MinHeight="768" MinWidth="1024" Height="1080" Width="1920">
     <ScrollViewer Margin="30" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-    <Grid>
+    <Grid Background="DarkGray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
@@ -36,10 +37,12 @@
             <Button x:Name="OpenOrders" Grid.Row="4">Zamówienia</Button>
             <Button x:Name="CloseApp" Grid.Row="5">Wyjdź</Button>
         </Grid>
-        
-        
 
-        <ContentControl Grid.Row="1" Grid.Column="2" x:Name="ActiveItem"/>
+
+        <Grid Background="White" Grid.Row="1" Grid.Column="2" >
+              <ContentControl x:Name="ActiveItem"/>
+        </Grid>
+        
 
     </Grid>
     </ScrollViewer>

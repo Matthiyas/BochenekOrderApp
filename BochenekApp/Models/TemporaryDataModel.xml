@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DataModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <state>false</state>
-  <counter>54</counter>
-  <type />
-  <typeIndex>-1</typeIndex>
+  <state>true</state>
+  <counter>65</counter>
+  <type>Brama dwuskrzydłowa</type>
+  <typeIndex>2</typeIndex>
   <number />
   <clientName />
   <wid />
   <heig />
   <color />
   <colorIndex>-1</colorIndex>
-  <trapeze />
-  <trapezeIndex>-1</trapezeIndex>
+  <trapeze>R-13</trapeze>
+  <trapezeIndex>1</trapezeIndex>
+  <trapeType>Poziomy</trapeType>
+  <trapeTypeIndex>1</trapeTypeIndex>
   <notes />
   <ColorsIndex>0</ColorsIndex>
 </DataModel>

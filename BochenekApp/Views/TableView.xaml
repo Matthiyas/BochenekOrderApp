@@ -32,7 +32,7 @@
 
             <!--First column of 1st row-->
             <Image x:Name="photo"                 
-               Margin="0 20 0 20"
+           
                Source="../Models/Images/logo.jpg" Stretch="Fill"/>
             <Border BorderBrush="Black" BorderThickness="0 0 1 1"/>
 
