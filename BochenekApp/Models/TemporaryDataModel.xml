@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DataModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <state>true</state>
-  <counter>65</counter>
+  <counter>68</counter>
   <type>Brama dwuskrzydłowa</type>
   <typeIndex>2</typeIndex>
-  <number />
+  <number>1</number>
   <clientName />
   <wid />
   <heig />
-  <color />
-  <colorIndex>-1</colorIndex>
+  <color>RAL 7016 mat(antracyt)</color>
+  <colorIndex>6</colorIndex>
   <trapeze>R-13</trapeze>
   <trapezeIndex>1</trapezeIndex>
   <trapeType>Poziomy</trapeType>

@@ -43,7 +43,7 @@ namespace BochenekApp.ViewModels
                 
                 UserControl uc = GetImage();
                 
-                Rect rect = new Rect(20, 20, uc.Width, uc.Height);
+                Rect rect = new Rect(20, 20, 1280, 768);
 
                 RenderTargetBitmap rtb = new RenderTargetBitmap(3508, 2480, 240, 220, PixelFormats.Pbgra32);
 
@@ -53,7 +53,7 @@ namespace BochenekApp.ViewModels
                 PngBitmapEncoder png = new PngBitmapEncoder();
                 png.Frames.Add(BitmapFrame.Create(rtb));
 
-                string path = @"../../Zlecenia/zlecenie"+_counter+".png";
+                string path = @"./Zlecenia/zlecenie"+_counter+".png";
                 var stream = File.Create(path);
 
                 png.Save(stream);
@@ -123,7 +123,8 @@ namespace BochenekApp.ViewModels
             {
                 if (_type == "Brama uchylna") return 270;
                 else if (_type == "Drzwi stalowe") return 350;
-                else return 290;
+                else if (_type == "Brama dwuskrzydłowa") return 280;
+                else return 0;
             }
             set { _recH = value; }
         }
@@ -133,7 +134,8 @@ namespace BochenekApp.ViewModels
             {
                 if (_type == "Brama uchylna") return 450;
                 else if (_type == "Drzwi stalowe") return 200;
-                else return 500;
+                else if (_type == "Brama dwuskrzydłowa") return 480;
+                else return 0;
             }
             set { _recW = value; }
         }

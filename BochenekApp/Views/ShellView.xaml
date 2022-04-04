@@ -40,7 +40,8 @@
 
 
         <Grid Background="White" Grid.Row="1" Grid.Column="2" >
-              <ContentControl x:Name="ActiveItem"/>
+                <Image Source="../Models/Images/logo.jpg" Stretch="Fill" Margin="150" />
+                <ContentControl x:Name="ActiveItem"/>
         </Grid>
         
 

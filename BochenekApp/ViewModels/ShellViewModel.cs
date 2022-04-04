@@ -47,7 +47,7 @@ namespace BochenekApp.ViewModels
 
         public void OpenOrders()
         {
-            Process.Start(@"..\..\Zlecenia");
+            Process.Start(@".\Zlecenia");
         }
         public void CloseApp()
         {
@@ -57,17 +57,20 @@ namespace BochenekApp.ViewModels
         public System.Windows.Controls.UserControl TableViewModel { get; set; }
         public void SaveOrder()
         {
-            
 
-            DialogResult dialog = System.Windows.Forms.MessageBox.Show("Na pewno utworzyć nowe zamówienie?", "Dane", MessageBoxButtons.YesNo);
-
-            if (dialog == DialogResult.Yes)
+            if (DataModel.ReadXML().state)
             {
-                ActivateItemAsync(new TableViewModel(true));
-                DataModel.ClearData(true);
-                System.Windows.Forms.MessageBox.Show("Dodano nowe zlecenie!");
-                ActivateItemAsync(new TableViewModel());
-            }
+                DialogResult dialog = System.Windows.Forms.MessageBox.Show("Na pewno utworzyć nowe zamówienie?", "Dane", MessageBoxButtons.YesNo);
+
+                if (dialog == DialogResult.Yes)
+                {
+                    ActivateItemAsync(new TableViewModel(true));
+                    DataModel.ClearData(true);
+                    System.Windows.Forms.MessageBox.Show("Dodano nowe zlecenie!");
+                    ActivateItemAsync(new TableViewModel());
+                }
+            }else System.Windows.Forms.MessageBox.Show("Nie podano żadnych danych!");
+
         }
     }
 }

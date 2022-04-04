@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:BochenekApp.Views"
              mc:Ignorable="d" Background="White"
              d:DesignHeight="350" d:DesignWidth="600"
-              MinHeight="480" MinWidth="600" Height="768" Width="1280">
+              MinHeight="768" MinWidth="1280" MaxHeight="1080" MaxWidth="1920">
     <Grid x:Name="Container">
         
         <Grid.ColumnDefinitions>
@@ -15,312 +15,328 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="20" />
         </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
-            <RowDefinition MinHeight="120" Height="auto"/>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <!--First row-->
-        <Grid x:Name="firstRow" Grid.Column="1" Grid.Row="1">
+        
+        <Grid x:Name="Content"  Grid.Row="1" Grid.Column="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="20" />
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition MinHeight="120" Height="auto"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <!--First row-->
+            <Grid x:Name="firstRow" Grid.Column="1" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-            <!--First column of 1st row-->
-            <Image x:Name="photo"                 
-           
+                <!--First column of 1st row-->
+                <Image x:Name="photo" MaxHeight="130" MaxWidth="300"
                Source="../Models/Images/logo.jpg" Stretch="Fill"/>
-            <Border BorderBrush="Black" BorderThickness="0 0 1 1"/>
+                <Border BorderBrush="Black" BorderThickness="0 0 1 1"/>
 
-            <!--Second column of 1st row-->
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="2*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+                <!--Second column of 1st row-->
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
-                <TextBlock
+                    <TextBlock
                    TextAlignment="Center" FontSize="18" FontWeight="Bold"
                    Padding="0 15 0 0">
                     ZLECENIE WEWNĘTRZNE / KARTA PRODUKCYJNA
                     <LineBreak/>
                     System Oceny Zgodności Wyrobu
-                </TextBlock>
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock x:Name="currentDate" FontSize="20" TextAlignment="Center"
+                    </TextBlock>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock x:Name="currentDate" FontSize="20" TextAlignment="Center"
                             Text="{Binding Path=Today, Mode=OneWay}"/>
-                    <Border BorderBrush="Black" BorderThickness="0 0 1 1"/>
+                        <Border BorderBrush="Black" BorderThickness="0 0 1 1"/>
+                    </Grid>
+                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
                 </Grid>
-                <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
-            </Grid>
-            <!--Third column of 1st row-->
-            <TextBlock x:Name="count" Grid.Column="2"
+                <!--Third column of 1st row-->
+                <TextBlock x:Name="count" Grid.Column="2"
                    Text="{Binding Path=Counter, Mode=OneWay}" FontSize="17"/>
-            <Border BorderBrush="Black" Grid.Column="2"
+                <Border BorderBrush="Black" Grid.Column="2"
                     BorderThickness="0 0 1 1"/>
 
-        </Grid>
-        <!--Second row:-->
-        <Grid x:Name="secondRow" Grid.Column="1" Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <!--headers-->
-            <TextBlock Grid.Column="0" Grid.Row="0" Text="Rodzaj wyrobu"
-                   TextAlignment="Center" FontSize="16" FontWeight="Bold"
-                   Background="Gray" Padding="10"/>
-
-            <TextBlock Grid.Column="1" Grid.Row="0" Text="Klient"
-                   TextAlignment="Center" FontSize="16" FontWeight="Bold"
-                   Background="Gray" Padding="10"/>
-
-            <TextBlock Grid.Column="2" Grid.Row="0" Text="Szerokość"
-                   TextAlignment="Center" FontSize="16" FontWeight="Bold"
-                   Background="Gray" Padding="10"/>
-
-            <TextBlock Grid.Column="3" Grid.Row="0" Text="Wysokość"
-                   TextAlignment="Center" FontSize="16" FontWeight="Bold"
-                   Background="Gray" Padding="10"/>
-
-            <TextBlock Grid.Column="4" Grid.Row="0" Text="Wymagania dodatkowe"
-                   TextAlignment="Center" FontSize="16" FontWeight="Bold"
-                   Background="Gray" Padding="10"/>
-
-            <TextBlock Grid.Column="5" Grid.Row="0" Text="Kolor"
-                   TextAlignment="Center" FontSize="16" FontWeight="Bold"
-                   Background="Gray" Padding="10"/>
-
-            <TextBlock Grid.Column="6" Grid.Row="0" Text="Uwagi o realizacji"
-                   TextAlignment="Center" FontSize="16" FontWeight="Bold"
-                   Background="Gray" Padding="10"/>
-
-            <!--values-->
-            <StackPanel Grid.Column="0" Grid.Row="1">
-                <TextBlock x:Name="typ" Text="{Binding Path=Type, Mode=OneWay}"
-                   TextAlignment="Center" FontSize="16"
-                    Padding="10"/>
-                <TextBlock x:Name="num" Text="{Binding Path=Number, Mode=OneWay}"
-                   TextAlignment="Center" FontSize="16"
-                    Padding="10"/>
-            </StackPanel>
-
-            <TextBlock x:Name="client" Grid.Column="1" Grid.Row="1" Text="{Binding Path=ClientName, Mode=OneWay}"
-                   TextAlignment="Center" FontSize="16"
-                   Padding="10"/>
-
-            <TextBlock x:Name="wid" Grid.Column="2" Grid.Row="1" Text="{Binding Path=Wid, Mode=OneWay}"
-                   TextAlignment="Center" FontSize="16"
-                   Padding="10"/>
-
-            <TextBlock x:Name="heig" Grid.Column="3" Grid.Row="1" Text="{Binding Path=Heig, Mode=OneWay}"
-                   TextAlignment="Center" FontSize="16"
-                   Padding="10"/>
-
-            <StackPanel Grid.Row="1" Grid.Column="4">
-                <WrapPanel>
-                    <TextBlock Padding="10" TextAlignment="Center" FontSize="16">*Trapez:</TextBlock>
-                    <TextBlock x:Name="tra" Text="{Binding Path=Trapeze, Mode=OneWay}" TextAlignment="Center" FontSize="16"
-                        Padding="10" FontWeight="Bold"/>
-                </WrapPanel>
-                <WrapPanel>
-                    <TextBlock Padding="10" TextAlignment="Center" FontSize="16">*Typ trapezu:</TextBlock>
-                    <TextBlock x:Name="traType" Text="{Binding Path=TrapeType, Mode=OneWay}" TextAlignment="Center" FontSize="16"
-                        Padding="10" FontWeight="Bold"/>
-                </WrapPanel>
-            </StackPanel>
-
-            <TextBlock x:Name="col" Grid.Column="5" Grid.Row="1" Text="{Binding Path=Color, Mode=OneWay}"
-                   TextAlignment="Center" FontSize="16"
-                   Padding="10"/>
-
-            <TextBlock x:Name="note" Grid.Column="6" Grid.Row="1" Text="{Binding Path=Notes, Mode=OneWay}"
-                   TextAlignment="Center" FontSize="16"
-                   Padding="10"/>
-            <Border BorderBrush="Black" BorderThickness="0 0 1 1" 
-                    Grid.Column="0" Grid.Row="1"/>
-            <Border BorderBrush="Black" BorderThickness="0 0 1 1" 
-                    Grid.Column="1" Grid.Row="1"/>
-            <Border BorderBrush="Black" BorderThickness="0 0 1 1" 
-                    Grid.Column="2" Grid.Row="1"/>
-            <Border BorderBrush="Black" BorderThickness="0 0 1 1" 
-                    Grid.Column="3" Grid.Row="1"/>
-            <Border BorderBrush="Black" BorderThickness="0 0 1 1" 
-                    Grid.Column="4" Grid.Row="1"/>
-            <Border BorderBrush="Black" BorderThickness="0 0 1 1" 
-                    Grid.Column="5" Grid.Row="1"/>
-            <Border BorderBrush="Black" BorderThickness="0 0 0 1" 
-                    Grid.Column="6" Grid.Row="1"/>
-        </Grid>
-
-        <!--Third row:-->
-
-        <Grid Grid.Row="3" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="3*"/>
-            </Grid.ColumnDefinitions>
-
-            <!--Left side-->
-            <Grid Grid.Column="0">
+            </Grid>
+            <!--Second row:-->
+            <Grid x:Name="secondRow" Grid.Column="1" Grid.Row="2">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4"
+                <!--headers-->
+                <TextBlock Grid.Column="0" Grid.Row="0" Text="Rodzaj wyrobu"
+                   TextAlignment="Center" FontSize="16" FontWeight="Bold"
+                   Background="Gray" Padding="10"/>
+
+                <TextBlock Grid.Column="1" Grid.Row="0" Text="Klient"
+                   TextAlignment="Center" FontSize="16" FontWeight="Bold"
+                   Background="Gray" Padding="10"/>
+
+                <TextBlock Grid.Column="2" Grid.Row="0" Text="Szerokość"
+                   TextAlignment="Center" FontSize="16" FontWeight="Bold"
+                   Background="Gray" Padding="10"/>
+
+                <TextBlock Grid.Column="3" Grid.Row="0" Text="Wysokość"
+                   TextAlignment="Center" FontSize="16" FontWeight="Bold"
+                   Background="Gray" Padding="10"/>
+
+                <TextBlock Grid.Column="4" Grid.Row="0" Text="Wymagania dodatkowe"
+                   TextAlignment="Center" FontSize="16" FontWeight="Bold"
+                   Background="Gray" Padding="10"/>
+
+                <TextBlock Grid.Column="5" Grid.Row="0" Text="Kolor"
+                   TextAlignment="Center" FontSize="16" FontWeight="Bold"
+                   Background="Gray" Padding="10"/>
+
+                <TextBlock Grid.Column="6" Grid.Row="0" Text="Uwagi o realizacji"
+                   TextAlignment="Center" FontSize="16" FontWeight="Bold"
+                   Background="Gray" Padding="10"/>
+
+                <!--values-->
+                <StackPanel Grid.Column="0" Grid.Row="1">
+                    <TextBlock x:Name="typ" Text="{Binding Path=Type, Mode=OneWay}"
+                   TextAlignment="Center" FontSize="16"
+                    Padding="10"/>
+                    <TextBlock x:Name="num" Text="{Binding Path=Number, Mode=OneWay}"
+                   TextAlignment="Center" FontSize="16"
+                    Padding="10"/>
+                </StackPanel>
+
+                <TextBlock x:Name="client"  Grid.Column="1" Grid.Row="1" Text="{Binding Path=ClientName, Mode=OneWay}"
+                   TextAlignment="Center" FontSize="16" TextWrapping="Wrap"
+                   Padding="10"/>
+
+                <TextBlock x:Name="wid" Grid.Column="2" Grid.Row="1" Text="{Binding Path=Wid, Mode=OneWay}"
+                   TextAlignment="Center" FontSize="16"
+                   Padding="10"/>
+
+                <TextBlock x:Name="heig" Grid.Column="3" Grid.Row="1" Text="{Binding Path=Heig, Mode=OneWay}"
+                   TextAlignment="Center" FontSize="16"
+                   Padding="10"/>
+
+                <StackPanel Grid.Row="1" Grid.Column="4">
+                    <WrapPanel>
+                        <TextBlock Padding="3" TextAlignment="Center" FontSize="16">*Trapez:</TextBlock>
+                        <TextBlock x:Name="tra" Text="{Binding Path=Trapeze, Mode=OneWay}" TextAlignment="Center" FontSize="16"
+                        Padding="3" FontWeight="Bold"/>
+                    </WrapPanel>
+                    <WrapPanel>
+                        <TextBlock Padding="3" TextAlignment="Center" FontSize="16">*Typ trapezu:</TextBlock>
+                        <TextBlock x:Name="traType" Text="{Binding Path=TrapeType, Mode=OneWay}" TextAlignment="Center" FontSize="16"
+                        Padding="3" FontWeight="Bold"/>
+                    </WrapPanel>
+                    <TextBlock Padding="3" FontSize="16">*Wartość:</TextBlock>
+                    <TextBlock Padding="3" FontSize="16">*Wartość:</TextBlock>
+                </StackPanel>
+
+                <TextBlock x:Name="col" TextWrapping="Wrap" Grid.Column="5" Grid.Row="1" Text="{Binding Path=Color, Mode=OneWay}"
+                   TextAlignment="Center" FontSize="16"
+                   Padding="10"/>
+
+                <TextBlock x:Name="note" TextWrapping="Wrap" Grid.Column="6" Grid.Row="1" Text="{Binding Path=Notes, Mode=OneWay}"
+                   TextAlignment="Center" FontSize="16"
+                   Padding="10"/>
+                <Border BorderBrush="Black" BorderThickness="0 0 1 1" 
+                    Grid.Column="0" Grid.Row="1"/>
+                <Border BorderBrush="Black" BorderThickness="0 0 1 1" 
+                    Grid.Column="1" Grid.Row="1"/>
+                <Border BorderBrush="Black" BorderThickness="0 0 1 1" 
+                    Grid.Column="2" Grid.Row="1"/>
+                <Border BorderBrush="Black" BorderThickness="0 0 1 1" 
+                    Grid.Column="3" Grid.Row="1"/>
+                <Border BorderBrush="Black" BorderThickness="0 0 1 1" 
+                    Grid.Column="4" Grid.Row="1"/>
+                <Border BorderBrush="Black" BorderThickness="0 0 1 1" 
+                    Grid.Column="5" Grid.Row="1"/>
+                <Border BorderBrush="Black" BorderThickness="0 0 0 1" 
+                    Grid.Column="6" Grid.Row="1"/>
+            </Grid>
+
+            <!--Third row:-->
+
+            <Grid Grid.Row="3" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Left side-->
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4"
                            Text="Zwolnienie do następnego etapu" FontWeight="Bold"
                            FontSize="15" TextAlignment="Center" Padding="10"
                            Background="Gray"/>
 
-                <TextBlock Grid.Row="1" Grid.Column="0" Background="Gray"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Background="Gray"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" Background="Gray"
+                    <TextBlock Grid.Row="2" Grid.Column="0" Background="Gray"
                            FontWeight="Bold" FontSize="15" Padding="20"
                            TextAlignment="Center">
                     Przygotowanie - <LineBreak/> docinanie materiałów
-                </TextBlock>
+                    </TextBlock>
 
-                <TextBlock Grid.Row="3" Grid.Column="0" Background="Gray"
+                    <TextBlock Grid.Row="3" Grid.Column="0" Background="Gray"
                            FontWeight="Bold" FontSize="15" Padding="20"
                            TextAlignment="Center">
                     Spawanie i skręcanie <LineBreak/> konstrukcji
-                </TextBlock>
+                    </TextBlock>
 
-                <TextBlock Grid.Row="4" Grid.Column="0" Background="Gray"
+                    <TextBlock Grid.Row="4" Grid.Column="0" Background="Gray"
                            FontWeight="Bold" FontSize="15" Padding="20"
                            TextAlignment="Center">
                     M-s końcowy i <LineBreak/> uzbrajanie
-                </TextBlock>
+                    </TextBlock>
 
-                <TextBlock Grid.Row="5" Grid.Column="0" Background="Gray"
+                    <TextBlock Grid.Row="5" Grid.Column="0" Background="Gray"
                            FontWeight="Bold" FontSize="15" Padding="20"
                            TextAlignment="Center">
                     Kontrola i odbiór - <LineBreak/> końcowy
-                </TextBlock>
+                    </TextBlock>
 
-                <TextBlock Grid.Row="1" Grid.Column="1" Background="Gray"
+                    <TextBlock Grid.Row="1" Grid.Column="1" Background="Gray"
                            FontWeight="Bold" FontSize="15" Padding="10"
                            TextAlignment="Center"
                            Text="Imię i nazwisko"/>
 
-                <TextBlock Grid.Row="1" Grid.Column="2" Background="Gray"
+                    <TextBlock Grid.Row="1" Grid.Column="2" Background="Gray"
                            FontWeight="Bold" FontSize="15" Padding="10"
                            TextAlignment="Center"
                            Text="Data"/>
 
-                <TextBlock Grid.Row="1" Grid.Column="3" Background="Gray"
+                    <TextBlock Grid.Row="1" Grid.Column="3" Background="Gray"
                            FontWeight="Bold" FontSize="15" Padding="10"
                            TextAlignment="Center"
                            Text="Podpis"/>
 
-                <!--Emptys texblocks-->
-                <TextBlock Grid.Row="2" Grid.Column="1"/>
-                <Border BorderBrush="Black" BorderThickness="1"
+                    <!--Emptys texblocks-->
+                    <TextBlock Grid.Row="2" Grid.Column="1"/>
+                    <Border BorderBrush="Black" BorderThickness="1"
                         Grid.Row="2" Grid.Column="1"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="2"/>
-                <Border BorderBrush="Black" BorderThickness="0 1 1 1"
+                    <TextBlock Grid.Row="2" Grid.Column="2"/>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 1"
                         Grid.Row="2" Grid.Column="2"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="3"/>
-                <Border BorderBrush="Black" BorderThickness="0 1 0 1"
+                    <TextBlock Grid.Row="2" Grid.Column="3"/>
+                    <Border BorderBrush="Black" BorderThickness="0 1 0 1"
                         Grid.Row="2" Grid.Column="3"/>
 
-                <TextBlock Grid.Row="3" Grid.Column="1"/>
-                <Border BorderBrush="Black" BorderThickness="1 0 1 1"
+                    <TextBlock Grid.Row="3" Grid.Column="1"/>
+                    <Border BorderBrush="Black" BorderThickness="1 0 1 1"
                         Grid.Row="3" Grid.Column="1"/>
 
-                <TextBlock Grid.Row="3" Grid.Column="2"/>
-                <Border BorderBrush="Black" BorderThickness="0 0 1 1"
+                    <TextBlock Grid.Row="3" Grid.Column="2"/>
+                    <Border BorderBrush="Black" BorderThickness="0 0 1 1"
                         Grid.Row="3" Grid.Column="2"/>
 
-                <TextBlock Grid.Row="3" Grid.Column="3"/>
-                <Border BorderBrush="Black" BorderThickness="0 0 0 1"
+                    <TextBlock Grid.Row="3" Grid.Column="3"/>
+                    <Border BorderBrush="Black" BorderThickness="0 0 0 1"
                         Grid.Row="3" Grid.Column="3"/>
 
-                <TextBlock Grid.Row="4" Grid.Column="1"/>
-                <Border BorderBrush="Black" BorderThickness="1 0 1 1"
+                    <TextBlock Grid.Row="4" Grid.Column="1"/>
+                    <Border BorderBrush="Black" BorderThickness="1 0 1 1"
                         Grid.Row="4" Grid.Column="1"/>
 
-                <TextBlock Grid.Row="4" Grid.Column="2"/>
-                <Border BorderBrush="Black" BorderThickness="0 0 1 1"
+                    <TextBlock Grid.Row="4" Grid.Column="2"/>
+                    <Border BorderBrush="Black" BorderThickness="0 0 1 1"
                         Grid.Row="4" Grid.Column="2"/>
 
-                <TextBlock Grid.Row="4" Grid.Column="3"/>
-                <Border BorderBrush="Black" BorderThickness="0 0 0 1"
+                    <TextBlock Grid.Row="4" Grid.Column="3"/>
+                    <Border BorderBrush="Black" BorderThickness="0 0 0 1"
                         Grid.Row="4" Grid.Column="3"/>
 
-                <TextBlock Grid.Row="5" Grid.Column="1"/>
-                <Border BorderBrush="Black" BorderThickness="1 0 1 0"
+                    <TextBlock Grid.Row="5" Grid.Column="1"/>
+                    <Border BorderBrush="Black" BorderThickness="1 0 1 0"
                         Grid.Row="5" Grid.Column="1"/>
 
-                <TextBlock Grid.Row="5" Grid.Column="2"/>
-                <Border BorderBrush="Black" BorderThickness="0 0 1 0"
+                    <TextBlock Grid.Row="5" Grid.Column="2"/>
+                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"
                         Grid.Row="5" Grid.Column="2"/>
 
-                <TextBlock Grid.Row="5" Grid.Column="3"/>
+                    <TextBlock Grid.Row="5" Grid.Column="3"/>
 
-            </Grid>
+                </Grid>
 
-            <!--Right side-->
-            <!--<Rectangle Grid.Column="1" Stroke="Black"
+                <!--Right side-->
+                <!--<Rectangle Grid.Column="1" Stroke="Black"
                        Height="200" Width="300" StrokeThickness="3">
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="../Models/Images/trapeTypeP.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>-->
-            <Rectangle x:Name="bord" Grid.Column="1" Stroke="Black"
+                <Rectangle x:Name="bord" Grid.Column="1" Stroke="Black"
                        Height="{Binding Path=RecH, Mode=OneWay}" Width="{Binding Path=RecW, Mode=OneWay}" StrokeThickness="3">
-                <Rectangle.Fill>
-                    <ImageBrush ImageSource="{Binding Path=RecFill, Mode=OneWay}"/>
-                </Rectangle.Fill>
-            </Rectangle>
-            <Rectangle x:Name="bordPo" Grid.Column="1" Stroke="Black" Visibility="{Binding Path=RecFill, Mode=OneWay}"
+                    <Rectangle.Fill>
+                        <ImageBrush ImageSource="{Binding Path=RecFill, Mode=OneWay}"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Rectangle x:Name="bordPo" Grid.Column="1" Stroke="Black" Visibility="{Binding Path=RecFill, Mode=OneWay}"
                        Height="{Binding Path=RecH, Mode=OneWay}" Width="{Binding Path=RecW, Mode=OneWay}" StrokeThickness="3">
-                <Rectangle.Fill>
-                    <ImageBrush ImageSource="../Models/Images/trapeTypePo.jpg"/>
-                </Rectangle.Fill>
-            </Rectangle>
+                    <Rectangle.Fill>
+                        <ImageBrush ImageSource="../Models/Images/trapeTypePo.jpg"/>
+                    </Rectangle.Fill>
+                </Rectangle>
 
-            <!--<Canvas x:Name="rec" Grid.Column="1">
+                <!--<Canvas x:Name="rec" Grid.Column="1">
                 <Rectangle x:Name="bord" Width="{Binding Path=RecW, Mode=OneWay}" 
                            Height="{Binding Path=RecH, Mode=OneWay}"
                            Stroke="Black" StrokeThickness="2"/>
             </Canvas>-->
 
-            <Border BorderBrush="Black" BorderThickness="0 0 1 0" 
+                <Border BorderBrush="Black" BorderThickness="0 0 1 0" 
                     Grid.Column="0" Grid.Row="0"/>
-        </Grid>
+            </Grid>
 
-        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.Row="1"
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.Row="1"
                Grid.RowSpan="3" Padding="5" />
+        </Grid>
+        
     </Grid>
 </UserControl>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <state>false</state>
+  <counter>4</counter>
+  <type />
+  <typeIndex>-1</typeIndex>
+  <number />
+  <clientName />
+  <wid />
+  <heig />
+  <color />
+  <colorIndex>-1</colorIndex>
+  <trapeze />
+  <trapezeIndex>-1</trapezeIndex>
+  <notes />
+  <ColorsIndex>0</ColorsIndex>
+</DataModel>

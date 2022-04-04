@@ -57,7 +57,7 @@ namespace BochenekApp.Models
         public static DataModel ReadXML()
         {
             System.Xml.Serialization.XmlSerializer reader = new System.Xml.Serialization.XmlSerializer(typeof(DataModel));
-            StreamReader file = new StreamReader(@"../../Models/TemporaryDataModel.xml");
+            StreamReader file = new StreamReader(@"./Files/TemporaryDataModel.xml");
             DataModel overview = (DataModel)reader.Deserialize(file);
             file.Close();
 
@@ -74,7 +74,7 @@ namespace BochenekApp.Models
             DataModel emptyData = new DataModel();
             emptyData.counter = c;
             System.Xml.Serialization.XmlSerializer writer = new System.Xml.Serialization.XmlSerializer(typeof(DataModel));
-            StreamWriter wfile = new StreamWriter(@"../../Models/TemporaryDataModel.xml");
+            StreamWriter wfile = new StreamWriter(@"./Files/TemporaryDataModel.xml");
             writer.Serialize(wfile, emptyData);
             wfile.Close();
         }

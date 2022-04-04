@@ -81,6 +81,7 @@ namespace BochenekApp.ViewModels
             if (!DataModel.ReadXML().state)
             { 
                 temp = DataModel.ReadXML();
+                temp.number = "1";
                 temp.state = true;
             }
         }
@@ -212,7 +213,7 @@ namespace BochenekApp.ViewModels
         public void SaveXML()
         {
             System.Xml.Serialization.XmlSerializer writer = new System.Xml.Serialization.XmlSerializer(typeof(DataModel));
-            StreamWriter wfile = new System.IO.StreamWriter(@"../../Models/TemporaryDataModel.xml");
+            StreamWriter wfile = new System.IO.StreamWriter(@"./Files/TemporaryDataModel.xml");
             writer.Serialize(wfile, temp);
             wfile.Close();
         }

@@ -62,11 +62,13 @@ namespace BochenekApp.Views
             double recW,recH;
             if (DataModel.ReadXML().type == "Brama uchylna") recH = 270;
             else if (DataModel.ReadXML().type == "Drzwi stalowe") recH = 350;
-            else recH = 290;
+            else if (DataModel.ReadXML().type == "Brama dwuskrzydłowa") recH = 280;
+            else recH = 0;
             
             if (DataModel.ReadXML().type == "Brama uchylna") recW = 450;
             else if(DataModel.ReadXML().type == "Drzwi stalowe") recW = 200;
-            else recW = 500;
+            else if (DataModel.ReadXML().type == "Brama dwuskrzydłowa") recW = 480;
+            else recW = 0;
 
             recBorder.Width = recW;
             recBorder.Height = recH;
