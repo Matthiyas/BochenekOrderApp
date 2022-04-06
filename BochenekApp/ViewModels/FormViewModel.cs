@@ -294,5 +294,22 @@ namespace BochenekApp.ViewModels
                 NotifyOfPropertyChange(() => Notes);
             }
         }
+        public string Options
+        {
+            get 
+            {
+                string temp=DataModel.ReadXML().options;
+                temp = temp.Replace('*', '\n');
+                return temp;
+            }
+            set
+            {
+                checkState();
+                temp.options = value;
+                SaveXML();
+                temp = DataModel.ReadXML();
+                NotifyOfPropertyChange(() => Options);
+            }
+        }
     }
 }

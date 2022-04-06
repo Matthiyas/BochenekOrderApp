@@ -26,6 +26,7 @@ namespace BochenekApp.Models
         public string trapeType;
         public string trapeTypeIndex;
         public string notes;
+        public string options;
         public string TypesCombo { get; set; }
         public string TypesIndex { get; set; }
 
@@ -52,6 +53,7 @@ namespace BochenekApp.Models
             trapeze = "";
             trapezeIndex = "-1";
             notes = "";
+            options = "";
         }
 
         public static DataModel ReadXML()

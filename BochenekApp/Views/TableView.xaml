@@ -157,8 +157,8 @@
                         <TextBlock x:Name="traType" Text="{Binding Path=TrapeType, Mode=OneWay}" TextAlignment="Center" FontSize="16"
                         Padding="3" FontWeight="Bold"/>
                     </WrapPanel>
-                    <TextBlock Padding="3" FontSize="16">*Wartość:</TextBlock>
-                    <TextBlock Padding="3" FontSize="16">*Wartość:</TextBlock>
+                    <TextBlock x:Name="opt" Padding="3" FontSize="16"
+                               Text="{Binding Path=Options, Mode=OneWay}"/>
                 </StackPanel>
 
                 <TextBlock x:Name="col" TextWrapping="Wrap" Grid.Column="5" Grid.Row="1" Text="{Binding Path=Color, Mode=OneWay}"

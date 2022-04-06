@@ -77,8 +77,16 @@
                   DisplayMemberPath="TrapezesCombo">
             </ComboBox>
         </WrapPanel>
-        
 
+        <TextBlock Grid.Row="4" Grid.Column="5" >Inne:</TextBlock>
+        <WrapPanel Grid.Row="5" Grid.Column="5">
+            <TextBox x:Name="Options" MinWidth="200px" Margin="0 0 5 0"></TextBox>
+            <Button Grid.Row="4">+</Button>
+        </WrapPanel>
+
+        <StackPanel Grid.Row="6" Grid.Column="5">
+            <TextBlock Text="{Binding Path=Options, Mode=OneWay}"></TextBlock>
+        </StackPanel>
 
         <!--<Border Grid.Column="0" Grid.ColumnSpan="7" Margin="70 -10"
                 Grid.Row="1" Grid.RowSpan="10" BorderThickness="1" BorderBrush="Black"/>-->

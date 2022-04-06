@@ -40,7 +40,9 @@ namespace BochenekApp.Views
             TextBlock tra = (TextBlock)FindName("tra");
             TextBlock traType = (TextBlock)FindName("traType");
             TextBlock note = (TextBlock)FindName("note");
+            TextBlock opt = (TextBlock)FindName("opt");
             TextBlock currentDate = (TextBlock)FindName("currentDate");
+
 
             //Canvas///////////////////////////////////////////////////////////////////////
             //Canvas can = (Canvas)FindName("rec");
@@ -91,7 +93,15 @@ namespace BochenekApp.Views
             tra.Text = DataModel.ReadXML().trapeze;
             traType.Text = DataModel.ReadXML().trapeType;
             note.Text = DataModel.ReadXML().notes;
+            opt.Text = DataModel.ReadXML().options;
             currentDate.Text = DateTime.Today.ToString("dddd ") + DateTime.Today.ToString("d");
+
+            
+            if (opt.Text != "")
+            {
+                opt.Text = opt.Text.Replace("*", "\n*");
+                opt.Text = "*"+ opt.Text;
+            }
 
             return uc;
         }

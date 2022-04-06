@@ -29,6 +29,7 @@ namespace BochenekApp.ViewModels
         private string _trapeze = DataModel.ReadXML().trapeze;
         private string _trapeType = DataModel.ReadXML().trapeType;
         private string _notes = DataModel.ReadXML().notes;
+        private string _options = DataModel.ReadXML().options;
         private int _recH = 0;
         private int _recW = 0;
         private string _recFill = "Hidden";
@@ -116,6 +117,17 @@ namespace BochenekApp.ViewModels
         {
             get { return _notes; }
             set { _notes = value; }
+        }
+        public string Options
+        {
+            get
+            {
+                string temp = _options;
+                temp = temp.Replace("*", "\n*");
+                if (temp == "") return temp;
+                return "*" + temp;
+            }
+            set { _options = value; }
         }
         public int RecH
         {
