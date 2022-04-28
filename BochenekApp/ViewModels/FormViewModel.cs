@@ -86,6 +86,16 @@ namespace BochenekApp.ViewModels
             }
         }
 
+        private string opt;
+        public void addOption()
+        {
+            MessageBox.Show(opt);
+            checkState();
+            temp.options += opt+"*";
+            SaveXML();
+            temp = DataModel.ReadXML();
+        }
+
         //Combobox types
         public BindableCollection<DataModel> Types
         {
@@ -298,17 +308,22 @@ namespace BochenekApp.ViewModels
         {
             get 
             {
-                string temp=DataModel.ReadXML().options;
-                temp = temp.Replace('*', '\n');
-                return temp;
+                return opt;
             }
             set
             {
                 checkState();
-                temp.options = value;
-                SaveXML();
-                temp = DataModel.ReadXML();
+                opt = value;
                 NotifyOfPropertyChange(() => Options);
+            }
+        }
+        public string OptionsShow
+        {
+            get 
+            {
+                string temp=DataModel.ReadXML().options;
+                temp = temp.Replace('*', '\n');
+                return temp;
             }
         }
     }

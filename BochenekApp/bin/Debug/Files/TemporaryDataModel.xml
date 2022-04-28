@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DataModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <state>true</state>
-  <counter>9</counter>
+  <counter>10</counter>
   <type />
   <typeIndex>-1</typeIndex>
   <number>1</number>
@@ -13,6 +13,6 @@
   <trapeze />
   <trapezeIndex>-1</trapezeIndex>
   <notes />
-  <options>ala</options>
+  <options>**123343</options>
   <ColorsIndex>0</ColorsIndex>
 </DataModel>

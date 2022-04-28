@@ -83,7 +83,6 @@ C:\Users\Maciek\Documents\GitHub\BochenekOrderApp\BochenekApp\bin\Debug\Caliburn
 C:\Users\Maciek\Documents\GitHub\BochenekOrderApp\BochenekApp\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 C:\Users\Maciek\Documents\GitHub\BochenekOrderApp\BochenekApp\bin\Debug\Microsoft.Xaml.Behaviors.xml
 C:\Users\Maciek\Documents\GitHub\BochenekOrderApp\BochenekApp\obj\Debug\BochenekApp.csproj.AssemblyReference.cache
-C:\Users\Maciek\Documents\GitHub\BochenekOrderApp\BochenekApp\obj\Debug\BochenekApp.csproj.SuggestedBindingRedirects.cache
 C:\Users\Maciek\Documents\GitHub\BochenekOrderApp\BochenekApp\obj\Debug\Views\FormView.g.cs
 C:\Users\Maciek\Documents\GitHub\BochenekOrderApp\BochenekApp\obj\Debug\Views\ShellView.g.cs
 C:\Users\Maciek\Documents\GitHub\BochenekOrderApp\BochenekApp\obj\Debug\Views\TableView.g.cs

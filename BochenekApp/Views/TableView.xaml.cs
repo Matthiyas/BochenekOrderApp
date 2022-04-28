@@ -25,7 +25,6 @@ namespace BochenekApp.Views
     /// </summary>
     public partial class TableView : UserControl
     {
-        
         public UserControl GetImage()
         {
             UserControl uc = (UserControl)FindName("Table");
