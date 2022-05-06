@@ -81,10 +81,11 @@
         <TextBlock Grid.Row="4" Grid.Column="5" >Inne:</TextBlock>
         <WrapPanel Grid.Row="5" Grid.Column="5">
             <TextBox x:Name="Options" MinWidth="200px" Margin="0 0 5 0"></TextBox>
-            <Button x:Name="addOption" Grid.Row="4">+</Button>
+            <Button Padding="5px" Margin="0 0 5 0" x:Name="addOption" Grid.Row="4">Dodaj</Button>
+            <Button Padding="5px" Margin="0 0 5 0" x:Name="clearOption" Grid.Row="4">Usuń opcje</Button>
         </WrapPanel>
-
-        <StackPanel Grid.Row="6" Grid.Column="5">
+        <TextBlock Grid.Row="8" Grid.Column="5">Dodane:</TextBlock>
+        <StackPanel Grid.Row="9" Grid.Column="5">
             <TextBlock Text="{Binding Path=OptionsShow, Mode=OneWay}"></TextBlock>
         </StackPanel>
 

@@ -101,3 +101,4 @@ C:\Users\Maciek\Documents\GitHub\BochenekOrderApp\BochenekApp\obj\Debug\Bochenek
 C:\Users\Maciek\Documents\GitHub\BochenekOrderApp\BochenekApp\obj\Debug\BochenekApp.csproj.CopyComplete
 C:\Users\Maciek\Documents\GitHub\BochenekOrderApp\BochenekApp\obj\Debug\BochenekApp.exe
 C:\Users\Maciek\Documents\GitHub\BochenekOrderApp\BochenekApp\obj\Debug\BochenekApp.pdb
+C:\Users\Maciek\Documents\GitHub\BochenekOrderApp\BochenekApp\obj\Debug\BochenekApp.csproj.SuggestedBindingRedirects.cache

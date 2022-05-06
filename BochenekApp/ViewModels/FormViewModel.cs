@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Forms;
 
 namespace BochenekApp.ViewModels
 {
@@ -75,6 +76,14 @@ namespace BochenekApp.ViewModels
             TrapeTypes.Add(new DataModel { TrapeTypesIndex = "0", TrapeTypesCombo = "Pionowy" });
             TrapeTypes.Add(new DataModel { TrapeTypesIndex = "1", TrapeTypesCombo = "Poziomy" });
         }
+        
+        public void SaveXML()
+        {
+            System.Xml.Serialization.XmlSerializer writer = new System.Xml.Serialization.XmlSerializer(typeof(DataModel));
+            StreamWriter wfile = new System.IO.StreamWriter(@"./Files/TemporaryDataModel.xml");
+            writer.Serialize(wfile, temp);
+            wfile.Close();
+        }
 
         public void checkState()
         {
@@ -89,11 +98,29 @@ namespace BochenekApp.ViewModels
         private string opt;
         public void addOption()
         {
-            MessageBox.Show(opt);
-            checkState();
-            temp.options += opt+"*";
-            SaveXML();
-            temp = DataModel.ReadXML();
+            if (opt == "") return;
+            System.Windows.Forms.DialogResult dialog = System.Windows.Forms.MessageBox.Show("Potwierdź dodanie opcji", "Dodatkowe opcje", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                checkState();
+                temp.options += opt+"*";
+                SaveXML();
+                temp = DataModel.ReadXML();
+                opt = "";
+                Refresh();
+            }
+        }
+        public void clearOption()
+        {
+            System.Windows.Forms.DialogResult dialog = System.Windows.Forms.MessageBox.Show("Na pewno wyczyścić opcje?", "Dodatkowe opcje", MessageBoxButtons.YesNo);
+
+            if (dialog == DialogResult.Yes)
+            {
+                temp.options = "";
+                SaveXML();
+                temp = DataModel.ReadXML();
+                Refresh();
+            }  
         }
 
         //Combobox types
@@ -220,13 +247,7 @@ namespace BochenekApp.ViewModels
             }
         }
 
-        public void SaveXML()
-        {
-            System.Xml.Serialization.XmlSerializer writer = new System.Xml.Serialization.XmlSerializer(typeof(DataModel));
-            StreamWriter wfile = new System.IO.StreamWriter(@"./Files/TemporaryDataModel.xml");
-            writer.Serialize(wfile, temp);
-            wfile.Close();
-        }
+        
         //Textblocks
         public string ClientName
         {
