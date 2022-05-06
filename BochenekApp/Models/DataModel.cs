@@ -15,7 +15,7 @@ namespace BochenekApp.Models
         public int counter;
         public string type;
         public string typeIndex;
-        public string number;
+        public int number;
         public string clientName;
         public string wid;
         public string heig;
@@ -44,7 +44,7 @@ namespace BochenekApp.Models
             state = false;
             type = "";
             typeIndex = "-1";
-            number = "";
+            number = 0;
             clientName = "";
             wid = "";
             heig = "";
@@ -70,7 +70,7 @@ namespace BochenekApp.Models
             int c = ReadXML().counter;
             if (isNewOrder)
             {
-                c += Int32.Parse(ReadXML().number);
+                c += ReadXML().number;
             }    
             
             DataModel emptyData = new DataModel();

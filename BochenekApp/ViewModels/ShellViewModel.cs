@@ -58,7 +58,7 @@ namespace BochenekApp.ViewModels
         public void SaveOrder()
         {
 
-            if (DataModel.ReadXML().state)
+            if (DataModel.ReadXML().state&&DataModel.ReadXML().number!=0)
             {
                 DialogResult dialog = System.Windows.Forms.MessageBox.Show("Na pewno utworzyć nowe zamówienie?", "Dane", MessageBoxButtons.YesNo);
 
@@ -69,8 +69,8 @@ namespace BochenekApp.ViewModels
                     System.Windows.Forms.MessageBox.Show("Dodano nowe zlecenie!");
                     ActivateItemAsync(new TableViewModel());
                 }
-            }else System.Windows.Forms.MessageBox.Show("Nie podano żadnych danych!");
-
+            }
+            else System.Windows.Forms.MessageBox.Show("Nie podano żadnych danych, lub są błędne!");
         }
     }
 }

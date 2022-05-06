@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -90,7 +91,7 @@ namespace BochenekApp.ViewModels
             if (!DataModel.ReadXML().state)
             { 
                 temp = DataModel.ReadXML();
-                temp.number = "1";
+                temp.number = 1;
                 temp.state = true;
             }
         }
@@ -103,7 +104,15 @@ namespace BochenekApp.ViewModels
             if (dialog == DialogResult.Yes)
             {
                 checkState();
-                temp.options += opt+"*";
+                if (temp.options != "")
+                {
+                    temp.options += "*"+opt;
+                }
+                else
+                {
+                    temp.options = opt;
+                }
+                
                 SaveXML();
                 temp = DataModel.ReadXML();
                 opt = "";
@@ -265,11 +274,13 @@ namespace BochenekApp.ViewModels
         {
             get { return DataModel.ReadXML().type; }
         }
-        public string Number
+
+        public int Number
         {
             get { return DataModel.ReadXML().number; }
             set
             {
+                value = Convert.ToInt32(value);
                 checkState();
                 temp.number = value;
                 SaveXML();

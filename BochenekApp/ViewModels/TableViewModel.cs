@@ -21,7 +21,7 @@ namespace BochenekApp.ViewModels
     {
         private int _counter = DataModel.ReadXML().counter;
         private string _type = DataModel.ReadXML().type;
-        private string _number = DataModel.ReadXML().number;
+        private int _number = DataModel.ReadXML().number;
         private string _clientName = DataModel.ReadXML().clientName;
         private string _wid = DataModel.ReadXML().wid;
         private string _heig = DataModel.ReadXML().heig;
@@ -30,11 +30,6 @@ namespace BochenekApp.ViewModels
         private string _trapeType = DataModel.ReadXML().trapeType;
         private string _notes = DataModel.ReadXML().notes;
         private string _options = DataModel.ReadXML().options;
-        private int _recH = 0;
-        private int _recW = 0;
-        private string _recFill = "Hidden";
-        
-
 
         public TableViewModel(bool isSaving=false)
         {
@@ -66,7 +61,6 @@ namespace BochenekApp.ViewModels
         public string Counter
         {
             get { return " Numer: "+_counter.ToString(); }
-            set { _counter = Int32.Parse(value); }
         }
 
         public string Today
@@ -76,58 +70,48 @@ namespace BochenekApp.ViewModels
         public string Type
         {
             get { return _type; }
-            set { _type = value; }
         }
         public string Number
         {
             get { return _number+" szt."; }
-            set { _number = value; }
         }
         public string ClientName
         {
             get { return _clientName; }
-            set { _clientName = value; }
         }
         public string Wid
         {
             get { return _wid; }
-            set { _wid = value; }
         }
         public string Heig
         {
             get { return _heig; }
-            set { _heig = value; }
         }
         public string Color
         {
             get { return _color; }
-            set { _color = value; }
         }
         public string Trapeze
         {
             get { return _trapeze; }
-            set { _trapeze = value; }
         }
         public string TrapeType
         {
             get { return _trapeType; }
-            set { _trapeType = value; }
         }
         public string Notes
         {
             get { return _notes; }
-            set { _notes = value; }
         }
         public string Options
         {
             get
             {
                 string temp = _options;
-                temp = temp.Replace("*", "\n*");
+                temp = temp.Replace("*", "\n-");
                 if (temp == "") return temp;
-                return "*" + temp;
+                return "-" + temp;
             }
-            set { _options = value; }
         }
         public int RecH
         {
@@ -138,7 +122,6 @@ namespace BochenekApp.ViewModels
                 else if (_type == "Brama dwuskrzydłowa") return 280;
                 else return 0;
             }
-            set { _recH = value; }
         }
         public int RecW
         {
@@ -149,7 +132,6 @@ namespace BochenekApp.ViewModels
                 else if (_type == "Brama dwuskrzydłowa") return 480;
                 else return 0;
             }
-            set { _recW = value; }
         }
         public string RecFill
         {
@@ -158,7 +140,6 @@ namespace BochenekApp.ViewModels
                 if (_trapeType == "Poziomy") return "Visible";
                 else return "Hidden";
             }
-            set { _recFill = value; }
         }
     }
 }

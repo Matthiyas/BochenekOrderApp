@@ -86,7 +86,7 @@
         </WrapPanel>
         <TextBlock Grid.Row="8" Grid.Column="5">Dodane:</TextBlock>
         <StackPanel Grid.Row="9" Grid.Column="5">
-            <TextBlock Text="{Binding Path=OptionsShow, Mode=OneWay}"></TextBlock>
+            <TextBlock TextAlignment="Center" Text="{Binding Path=OptionsShow, Mode=OneWay}"></TextBlock>
         </StackPanel>
 
         <!--<Border Grid.Column="0" Grid.ColumnSpan="7" Margin="70 -10"

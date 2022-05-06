@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DataModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <state>false</state>
-  <counter>11</counter>
+  <counter>361</counter>
   <type />
   <typeIndex>-1</typeIndex>
-  <number />
+  <number>0</number>
   <clientName />
   <wid />
   <heig />

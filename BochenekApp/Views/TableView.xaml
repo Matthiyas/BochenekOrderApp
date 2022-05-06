@@ -148,16 +148,16 @@
 
                 <StackPanel Grid.Row="1" Grid.Column="4">
                     <WrapPanel>
-                        <TextBlock Padding="3" TextAlignment="Center" FontSize="16">*Trapez:</TextBlock>
+                        <TextBlock Padding="3" TextAlignment="Center" FontSize="16">-Trapez:</TextBlock>
                         <TextBlock x:Name="tra" Text="{Binding Path=Trapeze, Mode=OneWay}" TextAlignment="Center" FontSize="16"
                         Padding="3" FontWeight="Bold"/>
                     </WrapPanel>
                     <WrapPanel>
-                        <TextBlock Padding="3" TextAlignment="Center" FontSize="16">*Typ trapezu:</TextBlock>
+                        <TextBlock Padding="3" TextAlignment="Center" FontSize="16">-Typ trapezu:</TextBlock>
                         <TextBlock x:Name="traType" Text="{Binding Path=TrapeType, Mode=OneWay}" TextAlignment="Center" FontSize="16"
                         Padding="3" FontWeight="Bold"/>
                     </WrapPanel>
-                    <TextBlock x:Name="opt" Padding="3" FontSize="16"
+                    <TextBlock TextWrapping="Wrap" x:Name="opt" Padding="3" FontSize="16"
                                Text="{Binding Path=Options, Mode=OneWay}"/>
                 </StackPanel>
 
@@ -305,12 +305,6 @@
                 </Grid>
 
                 <!--Right side-->
-                <!--<Rectangle Grid.Column="1" Stroke="Black"
-                       Height="200" Width="300" StrokeThickness="3">
-                <Rectangle.Fill>
-                    <ImageBrush ImageSource="../Models/Images/trapeTypeP.jpg"/>
-                </Rectangle.Fill>
-            </Rectangle>-->
                 <Rectangle x:Name="bord" Grid.Column="1" Stroke="Black"
                        Height="{Binding Path=RecH, Mode=OneWay}" Width="{Binding Path=RecW, Mode=OneWay}" StrokeThickness="3">
                     <Rectangle.Fill>
@@ -323,12 +317,6 @@
                         <ImageBrush ImageSource="../Models/Images/trapeTypePo.jpg"/>
                     </Rectangle.Fill>
                 </Rectangle>
-
-                <!--<Canvas x:Name="rec" Grid.Column="1">
-                <Rectangle x:Name="bord" Width="{Binding Path=RecW, Mode=OneWay}" 
-                           Height="{Binding Path=RecH, Mode=OneWay}"
-                           Stroke="Black" StrokeThickness="2"/>
-            </Canvas>-->
 
                 <Border BorderBrush="Black" BorderThickness="0 0 1 0" 
                     Grid.Column="0" Grid.Row="0"/>
