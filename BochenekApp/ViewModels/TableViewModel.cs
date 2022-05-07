@@ -39,9 +39,9 @@ namespace BochenekApp.ViewModels
                 
                 UserControl uc = GetImage();
                 
-                Rect rect = new Rect(20, 20, 1280, 768);
+                Rect rect = new Rect(20, 20, 1280, 1080);
 
-                RenderTargetBitmap rtb = new RenderTargetBitmap(3508, 2480, 240, 220, PixelFormats.Pbgra32);
+                RenderTargetBitmap rtb = new RenderTargetBitmap(3300, 2280, 240, 220, PixelFormats.Pbgra32);
 
                 uc.Arrange(rect);
                 rtb.Render(uc);

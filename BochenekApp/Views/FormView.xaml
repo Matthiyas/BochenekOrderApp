@@ -14,7 +14,7 @@
             <ColumnDefinition Width="80"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="40"/>
             <RowDefinition MinHeight="40" Height="auto"/>
             <RowDefinition MinHeight="40" Height="auto"/>
             <RowDefinition MinHeight="40" Height="auto"/>
@@ -78,7 +78,7 @@
         <WrapPanel Grid.Row="11" Grid.Column="2">
             <TextBox x:Name="Options" MinWidth="400px" Margin="0 0 5 0"></TextBox>
             <Button Padding="5px" Margin="0 0 5 0" x:Name="addOption" >Dodaj</Button>
-            <Button Padding="5px" Margin="0 0 5 0" x:Name="clearOption">Usuń opcje</Button>
+            <Button Padding="5px" Margin="0 0 5 0" x:Name="clearOption">Cofnij</Button>
         </WrapPanel>
 
 

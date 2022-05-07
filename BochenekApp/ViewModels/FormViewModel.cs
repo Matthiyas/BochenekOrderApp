@@ -96,12 +96,11 @@ namespace BochenekApp.ViewModels
             }
         }
 
-        private string opt;
+        private string opt="";
         public void addOption()
         {
             if (opt == "") return;
-            System.Windows.Forms.DialogResult dialog = System.Windows.Forms.MessageBox.Show("Potwierdź dodanie opcji", "Dodatkowe opcje", MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.Yes)
+            if (opt!="")
             {
                 checkState();
                 if (temp.options != "")
@@ -121,15 +120,21 @@ namespace BochenekApp.ViewModels
         }
         public void clearOption()
         {
-            System.Windows.Forms.DialogResult dialog = System.Windows.Forms.MessageBox.Show("Na pewno wyczyścić opcje?", "Dodatkowe opcje", MessageBoxButtons.YesNo);
-
-            if (dialog == DialogResult.Yes)
+            if (temp.options.LastIndexOf("*") != -1)
+            {
+                temp.options = temp.options.Substring(0, temp.options.LastIndexOf("*"));
+                SaveXML();
+                temp = DataModel.ReadXML();
+                Refresh();
+            }
+            else if (temp.options.LastIndexOf("*") == -1 && temp.options != "")
             {
                 temp.options = "";
                 SaveXML();
                 temp = DataModel.ReadXML();
                 Refresh();
-            }  
+            }
+            else return;
         }
 
         //Combobox types

@@ -4,17 +4,55 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BochenekApp.Views"
-        Background="Gray" Icon="../Models/Images/icon.ico"
+        Background="#FF292929" Icon="../Models/Images/icon.ico"
         mc:Ignorable="d" FontSize="32" WindowState="Maximized"
         Title="BochenekApp"  MinHeight="768" MinWidth="1024" Height="1080" Width="1920">
     <Window.Resources>
+        <!--Styl przycisków -->
         <Style TargetType="Button">
             <Setter Property="BorderBrush" Value="Black"/>
-            <Setter Property="Margin" Value="10"/>
+            <Setter Property="BorderThickness" Value="3"/>
+            <Setter Property="Margin" Value="10 10 30 10"/>
+            <Setter Property="MaxHeight" Value="100"/>
+            <Setter Property="Background" Value="#FFB7B6B9"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="8"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+        
+        <!--Styl combo -->
+        <Style TargetType="ComboBox">
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+
+        <!--Styl texboxów -->
+        <Style TargetType="TextBox">
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Template">
+            <Setter.Value>
+            <ControlTemplate TargetType="{x:Type TextBox}">
+                <Border x:Name="border"
+                        CornerRadius="10"
+                        BorderBrush="Black"
+                        BorderThickness="2"
+                        Background="#fff">
+                    <ScrollViewer x:Name="PART_ContentHost"
+                        Focusable="false"
+                        HorizontalScrollBarVisibility="Hidden"
+                        VerticalScrollBarVisibility="Hidden"/>
+                </Border>
+            </ControlTemplate>
+            </Setter.Value>
+            </Setter>
         </Style>
     </Window.Resources>
     <ScrollViewer Margin="30" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-    <Grid Background="DarkGray">
+    <Grid Background="#FF464545">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
@@ -38,19 +76,17 @@
             </Grid.RowDefinitions>
             <Button x:Name="LoadPageOne" Grid.Row="0">Dane</Button>
             <Button x:Name="LoadPageTwo" Grid.Row="1">Podgląd</Button>
-            <Button x:Name="SaveOrder" Grid.Row="2">Utwórz</Button>
-            <Button x:Name="ClearData" Grid.Row="3">Wyczyść</Button>
+            <Button Background="#FF52B6EA" x:Name="SaveOrder" Grid.Row="2">Utwórz</Button>
+            <Button Background="#FFFF5C5C" x:Name="ClearData" Grid.Row="3">Wyczyść</Button>
             <Button x:Name="OpenOrders" Grid.Row="4">Zamówienia</Button>
             <Button x:Name="CloseApp" Grid.Row="5">Wyjdź</Button>
         </Grid>
 
-        <Grid Background="White" Grid.Row="1" Grid.Column="2" >
-            <Image Source="../Models/Images/logo.jpg" Stretch="Fill" Margin="150" />
-            <ContentControl x:Name="ActiveItem"/>
-                <Border BorderBrush="Black" BorderThickness="1"/>
+            <Grid Background="White" Grid.Row="1" Grid.Column="2" >
+                <Image Source="../Models/Images/logo.jpg" Stretch="Fill" Margin="150" />
+                <ContentControl x:Name="ActiveItem"/>
+                <Border BorderBrush="Black" BorderThickness="3"/>
             </Grid>
-        
-
-    </Grid>
+        </Grid>
     </ScrollViewer>
 </Window>
