@@ -98,8 +98,8 @@ namespace BochenekApp.Views
             
             if (opt.Text != "")
             {
-                opt.Text = opt.Text.Replace("*", "\n*");
-                opt.Text = "*"+ opt.Text;
+                opt.Text = opt.Text.Replace("*", "\n-");
+                opt.Text = "-"+ opt.Text;
             }
 
             return uc;

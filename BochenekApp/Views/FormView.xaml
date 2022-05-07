@@ -8,90 +8,83 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="80"/>
             <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="4*"/>
-            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="80"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="60"/>
             <RowDefinition MinHeight="40" Height="auto"/>
-            <RowDefinition MinHeight="80" Height="auto"/>
             <RowDefinition MinHeight="40" Height="auto"/>
-            <RowDefinition MinHeight="80" Height="auto"/>
             <RowDefinition MinHeight="40" Height="auto"/>
-            <RowDefinition MinHeight="80" Height="auto"/>
             <RowDefinition MinHeight="40" Height="auto"/>
-            <RowDefinition MinHeight="80" Height="auto"/>
             <RowDefinition MinHeight="40" Height="auto"/>
-            <RowDefinition MinHeight="80" Height="auto"/>
+            <RowDefinition MinHeight="40" Height="auto"/>
+            <RowDefinition MinHeight="40" Height="auto"/>
+            <RowDefinition MinHeight="40" Height="auto"/>
+            <RowDefinition MinHeight="40" Height="auto"/>
+            <RowDefinition MinHeight="40" Height="auto"/>
+            <RowDefinition MinHeight="40" Height="auto"/>
+            <RowDefinition MinHeight="40" Height="auto"/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="1" Grid.Column="1">Rodzaj wyrobu:</TextBlock>
 
-        <ComboBox Margin="0,5,0,10" MinWidth="100" Grid.Row="2" Grid.Column="1"
+        <ComboBox Margin="0,5,0,20" MinWidth="100" Grid.Row="1" Grid.Column="2"
                   x:Name="Types" SelectedIndex="{Binding Path=CurrentType, Mode=OneWay}"
                   DisplayMemberPath="TypesCombo">
         </ComboBox>
         <TextBlock Visibility="Hidden" x:Name="Type"/>
 
-        <TextBlock Grid.Row="3" Grid.Column="1">Ilość:</TextBlock>
-        <TextBox Margin="0,0,0,10" MinWidth="100" Grid.Row="4" Grid.Column="1" x:Name="Number"></TextBox>
-
-        <TextBlock Grid.Row="5" Grid.Column="1">Klient:</TextBlock>
-        <TextBox Margin="0,0,0,10" MinWidth="100" Grid.Row="6" Grid.Column="1" x:Name="ClientName"></TextBox>
-        
-        <TextBlock Grid.Row="7" Grid.Column="1">Uwagi:</TextBlock>
-        <TextBox Margin="0,5,0,10" MinWidth="100" Grid.Row="8" Grid.Column="1" x:Name="Notes"></TextBox>
-        
-        <TextBlock Grid.Row="1" Grid.Column="3">Szerokość:</TextBlock>
-        <TextBox Margin="0,5,0,10" MinWidth="100" Grid.Row="2" Grid.Column="3" x:Name="Wid"></TextBox>
-        
-        <TextBlock Grid.Row="3" Grid.Column="3">Wysokość:</TextBlock>
-        <TextBox Margin="0,5,0,10" MinWidth="100" Grid.Row="4" Grid.Column="3" x:Name="Heig"></TextBox>
-
-        <TextBlock Grid.Row="5" Grid.Column="3">Kolor:</TextBlock>
-        <ComboBox Margin="0,5,0,10" MinWidth="100" Grid.Row="6" Grid.Column="3"
+        <TextBlock Grid.Row="2" Grid.Column="1">Kolor:</TextBlock>
+        <ComboBox Margin="0,5,0,20" MinWidth="100" Grid.Row="2" Grid.Column="2"
                   x:Name="Colors" SelectedIndex="{Binding Path=CurrentColor, Mode=OneWay}"
                   DisplayMemberPath="ColorsCombo">
         </ComboBox>
         <TextBlock Visibility="Hidden" x:Name="Color"></TextBlock>
 
-        <TextBlock Grid.Row="1" Margin="0,5,0,10" Grid.Column="5">Wymagania dodatkowe:</TextBlock>
-        <WrapPanel Grid.Row="2" Margin="0,5,0,10" Grid.Column="5">
-            <TextBlock Margin="20 0">-Typ trapezu:</TextBlock>
-            <ComboBox MinWidth="250" x:Name="TrapeTypes" 
-                      SelectedIndex="{Binding Path=CurrentTrapeType, Mode=OneWay}"
-                  DisplayMemberPath="TrapeTypesCombo">
-            </ComboBox>
-        </WrapPanel>
-        
-        <WrapPanel Grid.Row="3" Margin="0,5,0,10" Grid.Column="5">
-            <TextBlock Margin="20 0">-Trapez:</TextBlock>
-            <ComboBox MinWidth="250" x:Name="Trapezes" 
-                      SelectedIndex="{Binding Path=CurrentTrapeze, Mode=OneWay}"
-                  DisplayMemberPath="TrapezesCombo">
-            </ComboBox>
+
+        <TextBlock Grid.Row="3" Grid.Column="1">Klient:</TextBlock>
+        <TextBox Margin="0,0,0,20" MinWidth="100" Grid.Row="3" Grid.Column="2" x:Name="ClientName"></TextBox>
+
+        <TextBlock Grid.Row="4" Grid.Column="1">Uwagi:</TextBlock>
+        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="4" Grid.Column="2" x:Name="Notes"></TextBox>
+
+        <TextBlock Grid.Row="5" Grid.Column="1">Szerokość:</TextBlock>
+        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="5" Grid.Column="2" x:Name="Wid"></TextBox>
+
+        <TextBlock Grid.Row="6" Grid.Column="1">Wysokość:</TextBlock>
+        <TextBox Margin="0,5,0,20" MinWidth="100" Grid.Row="6" Grid.Column="2" x:Name="Heig"></TextBox>
+
+        <TextBlock Grid.Row="7" Grid.Column="1">Ilość:</TextBlock>
+        <TextBox Margin="0,0,0,20" MinWidth="100" Grid.Row="7" Grid.Column="2" x:Name="Number"></TextBox>
+
+        <TextBlock Grid.Row="8" Grid.Column="1">Typ trapezu:</TextBlock>
+        <ComboBox Margin="0,0,0,20" Grid.Row="8" Grid.Column="2" MinWidth="250" x:Name="TrapeTypes" 
+                  SelectedIndex="{Binding Path=CurrentTrapeType, Mode=OneWay}"
+               DisplayMemberPath="TrapeTypesCombo">
+        </ComboBox>
+
+        <TextBlock Grid.Row="9" Grid.Column="1">Trapez:</TextBlock>
+        <ComboBox Margin="0,0,0,20" Grid.Row="9" Grid.Column="2" MinWidth="250" x:Name="Trapezes" 
+                  SelectedIndex="{Binding Path=CurrentTrapeze, Mode=OneWay}"
+              DisplayMemberPath="TrapezesCombo">
+        </ComboBox>
+
+
+        <TextBlock Grid.Row="11" Margin="0,5,0,10" Grid.Column="1">Wymagania dodatkowe:</TextBlock>
+        <WrapPanel Grid.Row="11" Grid.Column="2">
+            <TextBox x:Name="Options" MinWidth="400px" Margin="0 0 5 0"></TextBox>
+            <Button Padding="5px" Margin="0 0 5 0" x:Name="addOption" >Dodaj</Button>
+            <Button Padding="5px" Margin="0 0 5 0" x:Name="clearOption">Usuń opcje</Button>
         </WrapPanel>
 
-        <TextBlock Grid.Row="4" Grid.Column="5" >Inne:</TextBlock>
-        <WrapPanel Grid.Row="5" Grid.Column="5">
-            <TextBox x:Name="Options" MinWidth="200px" Margin="0 0 5 0"></TextBox>
-            <Button Padding="5px" Margin="0 0 5 0" x:Name="addOption" Grid.Row="4">Dodaj</Button>
-            <Button Padding="5px" Margin="0 0 5 0" x:Name="clearOption" Grid.Row="4">Usuń opcje</Button>
-        </WrapPanel>
-        <TextBlock Grid.Row="8" Grid.Column="5">Dodane:</TextBlock>
-        <StackPanel Grid.Row="9" Grid.Column="5">
-            <TextBlock TextAlignment="Center" Text="{Binding Path=OptionsShow, Mode=OneWay}"></TextBlock>
+
+        <StackPanel Grid.Row="12" Grid.Column="1">
+            <TextBlock Text="{Binding Path=OptionsShow, Mode=OneWay}"></TextBlock>
         </StackPanel>
-
-        <!--<Border Grid.Column="0" Grid.ColumnSpan="7" Margin="70 -10"
-                Grid.Row="1" Grid.RowSpan="10" BorderThickness="1" BorderBrush="Black"/>-->
-        
 
     </Grid>
 </UserControl>

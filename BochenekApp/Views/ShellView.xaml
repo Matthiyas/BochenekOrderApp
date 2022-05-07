@@ -7,6 +7,12 @@
         Background="Gray" Icon="../Models/Images/icon.ico"
         mc:Ignorable="d" FontSize="32" WindowState="Maximized"
         Title="BochenekApp"  MinHeight="768" MinWidth="1024" Height="1080" Width="1920">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </Window.Resources>
     <ScrollViewer Margin="30" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
     <Grid Background="DarkGray">
         <Grid.ColumnDefinitions>
@@ -38,11 +44,11 @@
             <Button x:Name="CloseApp" Grid.Row="5">Wyjdź</Button>
         </Grid>
 
-
         <Grid Background="White" Grid.Row="1" Grid.Column="2" >
-                <Image Source="../Models/Images/logo.jpg" Stretch="Fill" Margin="150" />
-                <ContentControl x:Name="ActiveItem"/>
-        </Grid>
+            <Image Source="../Models/Images/logo.jpg" Stretch="Fill" Margin="150" />
+            <ContentControl x:Name="ActiveItem"/>
+                <Border BorderBrush="Black" BorderThickness="1"/>
+            </Grid>
         
 
     </Grid>
